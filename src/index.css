@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   ROOF-RENEW DESIGN SYSTEM
+   Brand: electric blue + cyan + navy + silver (sampled from the logo)
+   Light-first layout (white / ice) with deep-navy feature sections.
+   Display: Archivo Expanded · Body: Manrope
+   Signature: the "renew swoosh" — the curved blue arcs from the logo
+   ────────────────────────────────────────────────────────────── */
+
+@theme {
+  --font-display: "Archivo", "Arial Black", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --color-night: #050b1a;      /* deepest navy (footer, overlays) */
+  --color-navy: #0a1733;       /* dark feature sections */
+  --color-navy-2: #11234a;     /* dark cards */
+  --color-navy-line: #22365f;  /* borders on dark */
+  --color-ice: #eef4ff;        /* light section */
+  --color-frost: #dfe9fb;      /* light borders */
+  --color-steel: #52617d;      /* muted text on light */
+  --color-mist: #9fb0cf;       /* muted text on dark */
+  --color-silver: #c9d3e0;
+
+  --color-blue: #1f6bff;       /* BRAND electric blue */
+  --color-blue-deep: #0f4fd6;
+  --color-cyan: #2fc6ff;       /* BRAND cyan highlight */
+  --color-sky: #e3efff;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-kenburns: kenburns 20s ease-out both;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes kenburns {
+  from { transform: scale(1.15); }
+  to { transform: scale(1.02); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes sweep {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: #fff;
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  ::selection { background: var(--color-blue); color: #fff; }
+}
+
+@layer components {
+  .wrap { width: 100%; max-width: 82rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .wrap { padding-inline: 2.5rem; } }
+
+  /* Eyebrow: small pill with a blue dot */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--font-display); font-stretch: 112%; font-weight: 700;
+    font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--color-blue);
+  }
+  .eyebrow::before {
+    content: ""; width: .55rem; height: .55rem; border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-blue));
+    box-shadow: 0 0 0 4px rgb(31 107 255 / .15);
+  }
+  .on-dark .eyebrow, .eyebrow.on-dark { color: var(--color-cyan); }
+
+  /* Gradient accent words (blue → cyan), underlined by a swoosh */
+  .hl {
+    background: linear-gradient(95deg, var(--color-blue) 10%, var(--color-cyan) 90%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+    font-weight: 800; font-size: .95rem; padding: .95rem 1.55rem; border-radius: 999px;
+    transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s, background .3s, color .3s, border-color .3s;
+    white-space: nowrap;
+  }
+  @media (max-width: 420px) { .btn { white-space: normal; text-align: center; } }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-blue { background: linear-gradient(120deg, var(--color-blue-deep), var(--color-blue) 55%, #3a8bff); color: #fff; box-shadow: 0 10px 28px -12px rgb(31 107 255 / .8); }
+  .btn-blue:hover { box-shadow: 0 18px 40px -12px rgb(31 107 255 / .9); }
+  .btn-white { background: #fff; color: var(--color-navy); }
+  .btn-white:hover { box-shadow: 0 18px 40px -14px rgb(255 255 255 / .5); }
+  .btn-outline { border: 1.5px solid currentColor; }
+  .btn-outline:hover { background: var(--color-blue); border-color: var(--color-blue); color: #fff; }
+  .btn-glass { border: 1.5px solid rgb(255 255 255 / .35); color: #fff; background: rgb(255 255 255 / .08); backdrop-filter: blur(10px); }
+  .btn-glass:hover { background: #fff; color: var(--color-navy); }
+
+  .card {
+    background: #fff; border: 1px solid var(--color-frost); border-radius: 1.5rem;
+    box-shadow: 0 1px 0 rgb(10 23 51 / .03), 0 20px 50px -30px rgb(10 23 51 / .25);
+  }
+  .glass {
+    background: rgb(10 23 51 / .55);
+    border: 1px solid rgb(255 255 255 / .14);
+    backdrop-filter: blur(18px);
+  }
+
+  /* Soft dotted grid for light sections */
+  .dots {
+    background-image: radial-gradient(rgb(31 107 255 / .12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .dots-dark {
+    background-image: radial-gradient(rgb(255 255 255 / .07) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .glow-blue { box-shadow: 0 0 0 1px rgb(47 198 255 / .3), 0 30px 80px -30px rgb(31 107 255 / .7); }
+  .mask-fade-x { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
