@@ -10,64 +10,73 @@ export const BUSINESS = {
   phoneDisplay: "(616) 265-9270",
   phoneTel: "+16162659270",
   region: "Grand Rapids & West Michigan",
-  hours: "7AM – 8PM",
+  hours: "Mon–Sat · 7AM – 8PM",
   hoursNote: "Eastern Time",
   // Service area: 50-mile radius around ZIP 49512 (Kentwood / Grand Rapids)
   serviceCenter: { lat: 42.8806, lng: -85.5414, radiusMiles: 50, zip: "49512" },
 } as const;
 
+/**
+ * Core message (matches the live ad campaign):
+ * "Before you replace your roof, see if you can renew it first."
+ * Roof-Renew's service is ROOF REJUVENATION — a spray-applied treatment
+ * for aging asphalt shingles. Keep claims hedged ("may help"): no
+ * guaranteed lifespan numbers, prices or product names unless the
+ * client provides them.
+ */
 export const PROMISES = [
   { title: "The owner inspects your roof", body: "Every inspection is done by Bill Roberson, the owner — not a salesperson. You talk to the person responsible for the work." },
-  { title: "Free, no-pressure inspections", body: "We get up on the roof, photograph what we find and walk you through it. If your roof is fine, we'll tell you." },
-  { title: "Straight answers by phone", body: "Not sure what you need? Call or book a phone consultation first — no trip, no obligation." },
-  { title: "Built for Michigan winters", body: "Ice & water shield, proper ventilation and careful flashing — the details that matter when snow sits on your roof for months." },
-  { title: "Clean, respectful job sites", body: "Landscaping protected, debris hauled away, and a magnetic sweep for nails before we call it done." },
-  { title: "Long days, quick replies", body: "We answer from 7AM to 8PM, so you can reach us before work, after work, or the minute you spot a leak." },
+  { title: "Renew before you replace", body: "If your shingles are aging but still intact, rejuvenation may extend their life and save you thousands compared to a new roof." },
+  { title: "An honest candidate check", body: "Not every roof can be rejuvenated. If yours can't, we'll tell you straight — with photos — instead of selling you something that won't help." },
+  { title: "Free, no-pressure inspections", body: "We get up on the roof, photograph what we find and walk you through it. No obligation." },
+  { title: "Clean, careful application", body: "We protect your landscaping, siding and gutters and leave your property the way we found it." },
+  { title: "Long days, quick replies", body: "We answer Monday through Saturday, 7AM to 8PM — before work, after work, whenever it suits you." },
 ] as const;
 
 export const PROCESS = [
-  { step: "01", title: "Call or book online", body: "Tell us what's going on. We can start with a phone consultation or schedule a free on-site inspection." },
-  { step: "02", title: "Owner-led inspection", body: "Bill inspects the roof personally — shingles, flashing, vents, gutters and attic ventilation — and photographs everything." },
-  { step: "03", title: "Clear recommendation", body: "You get a plain-English explanation and a written estimate: repair, replace, or leave it alone." },
-  { step: "04", title: "Roof renewed", body: "We do the work right, protect your property, clean up completely and walk the finished roof with you." },
+  { step: "01", title: "Book your inspection", body: "Call or book online. You can start with a quick phone consultation or schedule a free on-site inspection." },
+  { step: "02", title: "Candidate check", body: "Bill inspects your shingles personally and photographs everything to see if your roof is a good candidate for rejuvenation." },
+  { step: "03", title: "Honest recommendation", body: "You get a plain-English answer: rejuvenate now, check back later, or — if the roof is too far gone — we'll tell you so." },
+  { step: "04", title: "Roof renewed", body: "The rejuvenation treatment is spray-applied across your shingles on a suitable dry day, then we walk the finished roof with you." },
 ] as const;
 
 export const SEASONS = [
   {
     key: "Winter",
-    title: "Snow load & ice dams",
-    body: "Heat escaping into the attic melts snow on the upper roof; it refreezes at the cold eaves and forms an ice dam. Water backs up under the shingles and into ceilings and walls.",
-    tips: ["Ice & water shield along the eaves", "Balanced intake & ridge ventilation", "Watch for heavy icicles at the gutters"],
+    title: "Freeze, thaw, repeat",
+    body: "Michigan winters swing above and below freezing again and again. Shingles that have dried out and turned brittle are the ones that crack and lose granules first.",
+    tips: ["Brittle shingles crack in the cold", "Watch for granules in the gutters after thaws", "Note any problem spots for a spring inspection"],
     img: "icicleGutter",
   },
   {
     key: "Spring",
-    title: "Thaw, rain & wind",
-    body: "As the snow melts, spring storms and strong west winds off Lake Michigan find every loose shingle and tired seal the winter left behind.",
-    tips: ["Look for missing or lifted shingles", "Check ceilings for new stains", "Schedule a free post-winter inspection"],
+    title: "See what winter left behind",
+    body: "Once the snow melts it's the perfect time for a free inspection — to see how your shingles came through the winter and whether they're a candidate for rejuvenation.",
+    tips: ["Book a free post-winter inspection", "Look for faded, dull or dry-looking shingles", "Check for missing or lifted shingles"],
     img: "shelfCloud",
   },
   {
     key: "Summer",
-    title: "Heat & UV",
-    body: "Long sunny days bake an under-ventilated attic and age shingles from underneath — granules wash into the gutters and shingles start to curl.",
-    tips: ["Granules collecting in gutters", "Curling or cracked shingles", "Hot, stuffy upstairs rooms"],
+    title: "Sun & heat dry shingles out",
+    body: "UV and summer heat slowly bake the oils out of asphalt shingles, leaving them faded, dry and brittle. Warm, dry days are also ideal for applying a rejuvenation treatment.",
+    tips: ["Faded or uneven shingle color", "Granules washing into downspouts", "Great time to schedule a treatment"],
     img: "aerialGrayRoof",
   },
   {
     key: "Fall",
-    title: "Leaves & prep for winter",
-    body: "Clogged gutters and worn flashing are a recipe for ice dams once the snow arrives. Fall is the best time to fix small problems before they freeze.",
-    tips: ["Clear leaves from gutters & valleys", "Repair flashing & pipe boots", "Get a roof check before the first snow"],
+    title: "Last call before winter",
+    body: "Fall is the last good window to renew your shingles before another long Michigan winter puts them to the test.",
+    tips: ["Clear leaves from gutters & valleys", "Get your candidate check before the first snow", "Schedule while the weather is still dry"],
     img: "gutterLeaves",
   },
 ] as const;
 
+/** Higher score = roof in worse shape (less likely to be a candidate). */
 export const HEALTH_CHECK = [
-  { q: "How old is your roof?", options: [["Under 10 years", 0], ["10–17 years", 1], ["18–25 years", 2], ["Over 25 / not sure", 2]] },
-  { q: "Any leaks or ceiling stains?", options: [["None", 0], ["One small spot", 1], ["More than one", 2], ["Active leak right now", 3]] },
-  { q: "What do the shingles look like?", options: [["Flat & even", 0], ["Some granule loss", 1], ["Curling, cracked or missing", 2], ["Moss or dark streaks", 1]] },
-  { q: "Ice dams or big icicles in winter?", options: [["Never", 0], ["Once in a while", 1], ["Every winter", 2], ["Not sure", 1]] },
+  { q: "How old is your roof?", options: [["Under 8 years", 0], ["8–15 years", 1], ["15–20 years", 2], ["20+ years / not sure", 3]] },
+  { q: "Any leaks or ceiling stains?", options: [["None", 0], ["One small spot, once", 2], ["More than one", 4], ["Active leak right now", 5]] },
+  { q: "What do the shingles look like?", options: [["Faded or dull", 0], ["Granules in the gutters", 1], ["Some curling or cracking", 2], ["Shingles missing", 4]] },
+  { q: "How does the roof look overall?", options: [["Fine, just tired-looking", 0], ["Dark streaks or moss", 1], ["Not sure", 1], ["Sagging or soft spots", 5]] },
 ] as const;
 
 export type Area = { name: string; lat: number; lng: number; region: string };
@@ -113,14 +122,14 @@ export const REGIONS = [
 ] as const;
 
 export const HOME_FAQ = [
-  { q: "Are your roof inspections really free?", a: "Yes. We inspect the roof, photograph what we find and explain it — with no cost and no obligation." },
+  { q: "What is roof rejuvenation?", a: "It's a spray-applied treatment for asphalt shingle roofs. Over time sun, heat and Michigan's freeze-thaw cycles dry shingles out and make them brittle. Rejuvenation is designed to soak into the shingles and may help restore flexibility and extend the life of your roof." },
+  { q: "Is my roof a candidate?", a: "The best candidates are asphalt shingle roofs that are aging but still intact — faded, dry or losing some granules, without active leaks or missing shingles. A free inspection tells you for sure." },
+  { q: "How much can I save compared to a new roof?", a: "When your roof is a good candidate, rejuvenation costs far less than a full replacement — homeowners can save thousands. We'll give you a clear, written price after the inspection." },
+  { q: "Will rejuvenation fix a leak?", a: "No. Rejuvenation treats aging shingles; it isn't a leak repair. If we find leaks, missing shingles or damaged decking, we'll show you and tell you honestly that your roof isn't a candidate right now." },
+  { q: "How long does it last?", a: "That depends on your roof's age and condition. We'll explain what you can realistically expect for your specific roof during the inspection — no inflated promises." },
   { q: "Who will inspect my roof?", a: "The owner, Bill Roberson. You'll talk directly with the person responsible for your roof — not a commissioned salesperson." },
-  { q: "Can I start with a phone call instead?", a: "Absolutely. Many homeowners start with a quick phone consultation to describe what they're seeing, and we'll tell you whether an on-site inspection makes sense." },
-  { q: "How do I know if I need a repair or a full replacement?", a: "It depends on the age and condition of the whole roof. Isolated damage on a healthy roof usually means a repair. Widespread curling, granule loss or repeated leaks usually mean it's time to replace. We'll show you photos either way." },
-  { q: "What causes ice dams — and can you stop them?", a: "Ice dams form when attic heat melts snow that then refreezes at the colder eaves. The fix is a combination of proper attic ventilation, insulation and ice & water shield along the eaves. We check all three." },
-  { q: "Can you replace a roof in the winter?", a: "Shingle manufacturers have cold-weather installation guidelines, and many repairs can be done year-round. Full replacements are easiest from spring through fall — we'll plan the right timing with you." },
-  { q: "What areas do you serve?", a: "Grand Rapids and a 50-mile radius around it: Kentwood, Wyoming, Grandville, Rockford, Lowell, Ada, Holland, Grand Haven, Muskegon, Hastings and more." },
-  { q: "What are your hours?", a: "We're available from 7AM to 8PM (Eastern). Call (616) 265-9270." },
+  { q: "Can I start with a phone call?", a: "Absolutely. Describe what you're seeing and we'll tell you whether an on-site inspection makes sense." },
+  { q: "What areas and hours do you serve?", a: "Grand Rapids and a 50-mile radius around it, across Kent County and West Michigan. We're available Monday through Saturday, 7AM to 8PM — call (616) 265-9270." },
 ] as const;
 
 export const NAV = [

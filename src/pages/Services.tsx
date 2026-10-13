@@ -10,8 +10,8 @@ import { useSEO } from "../seo";
 
 export default function Services() {
   useSEO({
-    title: "Roofing Services | Roof-Renew — Grand Rapids & West Michigan",
-    description: "Roof replacement, roof repair & leaks, free roof inspections, storm & wind damage and ice dam protection for homes across Grand Rapids and West Michigan.",
+    title: "Roof Rejuvenation & Free Inspections | Roof-Renew — Grand Rapids & Kent County",
+    description: "Roof rejuvenation for aging asphalt shingles and free owner-led inspections across Grand Rapids, Kent County and West Michigan.",
   });
 
   return (
@@ -20,10 +20,10 @@ export default function Services() {
         eyebrow="Roofing services"
         title={
           <>
-            Everything your roof needs. <span className="hl">Nothing it doesn't.</span>
+            Renew it first. <span className="hl">Replace it later.</span>
           </>
         }
-        sub="From a single leak to a full roof renewal — handled personally by the owner, for homes across Grand Rapids and West Michigan."
+        sub="Roof rejuvenation for aging asphalt shingles, and a free owner-led inspection to find out if your roof is a candidate."
         image={IMG.aerialGrayRoof}
         imageAlt="Aerial view of a suburban home with a gray shingle roof"
         crumbs={[{ label: "Services" }]}

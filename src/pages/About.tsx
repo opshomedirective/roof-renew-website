@@ -9,8 +9,8 @@ import { useSEO } from "../seo";
 
 export default function About() {
   useSEO({
-    title: "About Roof-Renew | Owner-Led Roofing in Grand Rapids, MI",
-    description: "Roof-Renew is an owner-led roofing company serving Grand Rapids and West Michigan. Every inspection is done personally by the owner, Bill Roberson.",
+    title: "About Roof-Renew | Owner-Led Roof Rejuvenation in Grand Rapids, MI",
+    description: "Roof-Renew helps West Michigan homeowners renew aging shingle roofs before replacing them. Every inspection is done personally by the owner, Bill Roberson.",
   });
 
   return (
@@ -22,7 +22,7 @@ export default function About() {
             A West Michigan roofer <span className="hl">you can actually reach.</span>
           </>
         }
-        sub="Owner-led, local and straightforward — roofing for homeowners across Grand Rapids and the communities around it."
+        sub="Owner-led, local and straightforward — helping homeowners across Grand Rapids and Kent County get more life out of the roof they already have."
         image={IMG.brickAutumn}
         imageAlt="Brick home with autumn trees in West Michigan"
         crumbs={[{ label: "About" }]}
@@ -32,17 +32,18 @@ export default function About() {
         <div className="wrap grid items-center gap-14 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">Our story</p>
-            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">Renewing West Michigan roofs, one home at a time.</h2>
+            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">Renew before you replace.</h2>
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-steel">
               <p>
-                Roof-Renew was built on a simple idea: homeowners deserve a straight answer about their roof from the person who's actually responsible for the work.
+                Roof-Renew was built on a simple idea: a lot of roofs get replaced before they really need to be. If your shingles are aging but still intact, renewing
+                them first may save you thousands.
               </p>
               <p>
                 That's why every inspection is done by the owner, {BUSINESS.owner}. He gets on the roof, photographs what he finds, explains it in plain English, and tells
-                you honestly whether you need a repair, a full renewal — or nothing at all.
+                you honestly whether your roof is a good candidate for rejuvenation — or not.
               </p>
               <p>
-                We serve Grand Rapids and a 50-mile radius around it, and we're growing — with plans to add crews and expand our service area as more West Michigan
+                We serve Grand Rapids and a 50-mile radius around it, and we're growing, with plans to add crews and expand our service area as more West Michigan
                 homeowners find us.
               </p>
             </div>

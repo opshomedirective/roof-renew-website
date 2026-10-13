@@ -1,6 +1,6 @@
-import { CloudLightning, Home, ScanSearch, Snowflake, Wrench, type LucideIcon } from "lucide-react";
+import { Home, ScanSearch, Sparkles, type LucideIcon } from "lucide-react";
 
-const ICONS: Record<string, LucideIcon> = { CloudLightning, Home, ScanSearch, Snowflake, Wrench };
+const ICONS: Record<string, LucideIcon> = { Home, ScanSearch, Sparkles };
 
 export default function Icon({ name, className }: { name: string; className?: string }) {
   const C = ICONS[name] ?? Home;

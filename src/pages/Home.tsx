@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight, ArrowUpRight, Camera, Clock, MapPin, PhoneCall, ScanSearch, ShieldCheck, Phone, UserRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BadgeDollarSign, Camera, Clock, MapPin, Recycle, ScanSearch, ShieldCheck, Phone, Sparkles, UserRound } from "lucide-react";
 import Reveal from "../components/Reveal";
 import Swoosh from "../components/Swoosh";
 import Marquee from "../components/Marquee";
 import ServiceCard from "../components/ServiceCard";
 import BeforeAfter from "../components/BeforeAfter";
 import SeasonTabs from "../components/SeasonTabs";
-import IceDamDiagram from "../components/IceDamDiagram";
+import RenewVsReplace from "../components/RenewVsReplace";
 import HealthCheck from "../components/HealthCheck";
 import AreaMap from "../components/AreaMap";
 import FAQ from "../components/FAQ";
@@ -27,9 +27,9 @@ const SLIDES = [
 
 export default function Home() {
   useSEO({
-    title: "Roof-Renew | Roofing Contractor in Grand Rapids & West Michigan",
+    title: "Roof-Renew | Roof Rejuvenation in Grand Rapids & Kent County, MI",
     description:
-      "Roof replacement, roof repair, free owner-led inspections, storm damage and ice dam protection for homes in Grand Rapids, Kentwood, Wyoming and West Michigan. Call (616) 265-9270.",
+      "Before you replace your roof, see if you can renew it first. Roof rejuvenation for aging asphalt shingles in Grand Rapids, Kent County and West Michigan. Free owner-led inspections. Call (616) 265-9270.",
   });
 
   return (
@@ -38,8 +38,8 @@ export default function Home() {
       <TrustRow />
       <ServicesSection />
       <RenewSection />
+      <CompareSection />
       <SeasonsSection />
-      <IceDamSection />
       <OwnerSection />
       <ProcessSection />
       <HealthSection />
@@ -85,52 +85,49 @@ function Hero() {
       <div className="wrap relative grid items-center gap-12 lg:grid-cols-[1.35fr_1fr]">
         <div>
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="eyebrow on-dark">
-            Grand Rapids & West Michigan Roofing
+            Kent County & West Michigan Homeowners
           </motion.p>
-          <h1 className="mt-6 text-[2.9rem] leading-[0.98] sm:text-7xl lg:text-[5.4rem]">
-            {["Your", "roof,"].map((w, k) => (
+          <h1 className="mt-6 text-[2.6rem] leading-[0.98] sm:text-7xl lg:text-[5rem]">
+            {["Before", "you", "replace", "your", "roof…"].map((w, k) => (
               <motion.span
                 key={w}
-                className="mr-[0.25em] inline-block"
+                className="mr-[0.22em] inline-block"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + k * 0.1, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+                transition={{ delay: 0.2 + k * 0.08, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
               >
                 {w}
               </motion.span>
             ))}
-            <motion.span
-              className="relative inline-block"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-            >
-              <span className="hl">renewed.</span>
-              <svg viewBox="0 0 300 30" className="absolute -bottom-4 left-0 w-full" aria-hidden>
-                <motion.path
-                  d="M4 22 C 80 4, 200 4, 296 16"
-                  fill="none"
-                  stroke="url(#hero-sw)"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ delay: 1, duration: 1.1, ease: "easeInOut" }}
-                />
-                <defs>
-                  <linearGradient id="hero-sw" x1="0" x2="1">
-                    <stop offset="0" stopColor="#1f6bff" />
-                    <stop offset="1" stopColor="#2fc6ff" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </motion.span>
-            <motion.span className="mt-2 block text-[0.62em] text-white/90" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}>
-              Built for Michigan winters.
+            <motion.span className="mt-2 block text-[0.78em]" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65 }}>
+              see if you can{" "}
+              <span className="relative inline-block">
+                <span className="hl">renew it</span>
+                <svg viewBox="0 0 300 30" className="absolute -bottom-3 left-0 w-full" aria-hidden>
+                  <motion.path
+                    d="M4 22 C 80 4, 200 4, 296 16"
+                    fill="none"
+                    stroke="url(#hero-sw)"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ delay: 1.1, duration: 1.1, ease: "easeInOut" }}
+                  />
+                  <defs>
+                    <linearGradient id="hero-sw" x1="0" x2="1">
+                      <stop offset="0" stopColor="#1f6bff" />
+                      <stop offset="1" stopColor="#2fc6ff" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>{" "}
+              first.
             </motion.span>
           </h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="mt-8 max-w-xl text-lg leading-relaxed text-white/85 sm:text-xl">
-            Roof replacement, leak repair and storm damage for homes across Grand Rapids and West Michigan — with every inspection done personally by the owner.
+            Roof rejuvenation may help restore aging shingles and extend your roof's life — saving you thousands compared to a new roof. Every inspection is done
+            personally by the owner.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.05 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link to="/contact" className="btn btn-blue">
@@ -155,15 +152,15 @@ function Hero() {
               </div>
             </div>
             <p className="relative mt-5 text-white/80">
-              The owner inspects every roof himself, shows you photos of what he finds, and gives you a straight answer — even when that answer is “your roof is fine.”
+              The owner inspects every roof himself, shows you photos, and tells you straight whether your roof can be renewed — or if it can't.
             </p>
             <div className="relative my-6 h-px bg-white/15" />
             <ul className="relative space-y-3 text-sm">
               <li className="flex items-center gap-3">
-                <ScanSearch className="h-4 w-4 text-cyan" /> Free, no-obligation inspections
+                <Sparkles className="h-4 w-4 text-cyan" /> Roof rejuvenation for aging shingles
               </li>
               <li className="flex items-center gap-3">
-                <PhoneCall className="h-4 w-4 text-cyan" /> Phone consultations available
+                <ScanSearch className="h-4 w-4 text-cyan" /> Free, no-obligation inspections
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-cyan" /> Open {BUSINESS.hours}
@@ -189,9 +186,9 @@ function Hero() {
 function TrustRow() {
   const items = [
     { icon: UserRound, k: "Owner on every job", v: `${BUSINESS.owner} inspects personally` },
+    { icon: BadgeDollarSign, k: "Save thousands", v: "Renew instead of replacing" },
     { icon: ScanSearch, k: "Free inspections", v: "No pressure, no obligation" },
-    { icon: PhoneCall, k: "Phone consultations", v: "Start with a quick call" },
-    { icon: MapPin, k: "50-mile radius", v: "Grand Rapids & West Michigan" },
+    { icon: MapPin, k: "Kent County + 50 mi", v: "Grand Rapids & West Michigan" },
   ];
   return (
     <section className="relative bg-white pt-6 pb-10">
@@ -221,12 +218,12 @@ function ServicesSection() {
           <Reveal>
             <p className="eyebrow">What we do</p>
             <h2 className="mt-4 max-w-2xl text-4xl text-navy sm:text-5xl">
-              Roofing, done right <span className="hl">the first time.</span>
+              Renew your roof. <span className="hl">Keep your thousands.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <Link to="/services" className="btn btn-outline text-navy !py-3">
-              All services <ArrowRight className="h-4 w-4" />
+              Our services <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>
@@ -240,8 +237,8 @@ function ServicesSection() {
             <Link to="/contact" className="group flex h-full min-h-[320px] flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-blue-deep via-blue to-cyan p-7 text-white">
               <ScanSearch className="h-10 w-10" strokeWidth={1.5} />
               <div>
-                <p className="font-display text-3xl font-extrabold">Not sure what you need?</p>
-                <p className="mt-2 text-white/85">Book a free inspection or a quick phone consultation and get a straight answer.</p>
+                <p className="font-display text-3xl font-extrabold">Can my roof be renewed?</p>
+                <p className="mt-2 text-white/85">Book a free inspection or a quick phone consultation and get a straight answer — candidate or not.</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-extrabold">
                   Get started <ArrowUpRight className="h-4 w-4 transition group-hover:rotate-45" />
                 </span>
@@ -260,23 +257,24 @@ function RenewSection() {
     <section className="relative bg-ice py-20 lg:py-28">
       <div className="wrap grid items-center gap-12 lg:grid-cols-[1fr_1.25fr]">
         <Reveal>
-          <p className="eyebrow">Renew, don't just repair</p>
+          <p className="eyebrow">What is roof rejuvenation?</p>
           <h2 className="mt-4 text-4xl text-navy sm:text-5xl">
-            From tired and mossy to <span className="hl">clean and tight.</span>
+            Give aging shingles <span className="hl">a second life.</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-steel">
-            Moss, curling tabs and missing granules mean your shingles have stopped protecting your home. A full renewal replaces the whole system — decking repairs,
-            ice & water shield, underlayment, flashing, ventilation and new architectural shingles.
+            Sun, heat and Michigan freeze-thaw cycles slowly dry out the oils in asphalt shingles until they turn faded and brittle. Rejuvenation is a spray-applied
+            treatment designed to soak into the shingles and help restore their flexibility — so a roof that's aging but still intact may keep protecting your home
+            for longer.
           </p>
           <ul className="mt-8 space-y-3">
-            {["Full tear-off — no layering over problems", "Ice & water shield at every eave and valley", "Balanced ventilation to fight ice dams", "Clean job site and a final walkthrough"].map((t) => (
+            {["May extend the life of your current roof", "Saves thousands compared to replacement", "No tear-off, no dumpster, no landfill waste", "Owner-led candidate check before anything else"].map((t) => (
               <li key={t} className="flex items-center gap-3 font-semibold text-navy">
                 <ShieldCheck className="h-5 w-5 text-blue" /> {t}
               </li>
             ))}
           </ul>
-          <Link to="/services/roof-replacement" className="btn btn-blue mt-9">
-            Roof replacement <ArrowRight className="h-4 w-4" />
+          <Link to="/services/roof-rejuvenation" className="btn btn-blue mt-9">
+            How rejuvenation works <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
         <Reveal delay={0.1}>
@@ -294,8 +292,8 @@ function SeasonsSection() {
       <div className="wrap">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Four seasons of wear</p>
-          <h2 className="mt-4 text-4xl text-navy sm:text-5xl">What a Michigan year does to your roof.</h2>
-          <p className="mt-5 text-lg text-steel">Lake-effect snow, spring wind, summer heat and fall leaves — every season tests a different part of your roof.</p>
+          <h2 className="mt-4 text-4xl text-navy sm:text-5xl">What a Michigan year does to your shingles.</h2>
+          <p className="mt-5 text-lg text-steel">Freeze-thaw winters and hot summers age asphalt shingles year after year — and some seasons are better than others to renew them.</p>
         </Reveal>
         <Reveal className="mt-12">
           <SeasonTabs />
@@ -305,25 +303,31 @@ function SeasonsSection() {
   );
 }
 
-/* ───────────────────────────── ICE DAMS */
-function IceDamSection() {
+/* ───────────────────────────── RENEW VS REPLACE */
+function CompareSection() {
   return (
     <section className="dots relative bg-ice py-20 lg:py-28">
       <div className="wrap">
-        <Reveal className="max-w-3xl">
-          <p className="eyebrow">Ice dams, explained</p>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow justify-center">Renew vs. replace</p>
           <h2 className="mt-4 text-4xl text-navy sm:text-5xl">
-            Big icicles aren't charming. <span className="hl">They're a warning.</span>
+            Before spending thousands on a new roof, <span className="hl">find out if yours can be renewed.</span>
           </h2>
-          <p className="mt-5 text-lg text-steel">Toggle the diagram to see how ice dams form — and how the right roof system stops winter leaks.</p>
+          <p className="mt-5 text-lg text-steel">Rejuvenation isn't for every roof — but when yours is a candidate, the difference is big.</p>
         </Reveal>
         <Reveal className="mt-12">
-          <IceDamDiagram />
+          <RenewVsReplace />
         </Reveal>
-        <Reveal className="mt-10">
-          <Link to="/services/ice-dams-ventilation" className="btn btn-outline text-navy">
-            Ice dams & ventilation <ArrowRight className="h-4 w-4" />
-          </Link>
+        <Reveal className="mt-10 flex flex-wrap justify-center gap-3">
+          {[
+            { i: BadgeDollarSign, t: "Save money vs. replacement" },
+            { i: Sparkles, t: "Extend your roof's life" },
+            { i: Recycle, t: "Keep shingles out of the landfill" },
+          ].map(({ i: I, t }) => (
+            <span key={t} className="inline-flex items-center gap-2 rounded-full border border-frost bg-white px-4 py-2 text-sm font-bold text-navy">
+              <I className="h-4 w-4 text-blue" /> {t}
+            </span>
+          ))}
         </Reveal>
       </div>
     </section>
@@ -354,8 +358,8 @@ function OwnerSection() {
               You talk to the owner. <span className="hl">Not a salesperson.</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-white/75">
-              When you call Roof-Renew, the person who inspects your roof is the person responsible for the work. No pressure, no runaround — just honest answers and
-              roofs done right.
+              When you call Roof-Renew, the person who inspects your roof is the person responsible for the work. No pressure, no runaround — just an honest answer
+              about whether your roof can be renewed.
             </p>
           </Reveal>
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -424,11 +428,11 @@ function HealthSection() {
     <section className="dots relative bg-ice py-20 lg:py-28">
       <div className="wrap grid items-center gap-12 lg:grid-cols-[1fr_1.3fr]">
         <Reveal>
-          <p className="eyebrow">60-second roof health check</p>
+          <p className="eyebrow">60-second candidate check</p>
           <h2 className="mt-4 text-4xl text-navy sm:text-5xl">
-            Is it time to <span className="hl">renew your roof?</span>
+            Can your roof <span className="hl">be renewed?</span>
           </h2>
-          <p className="mt-5 text-lg text-steel">Answer four quick questions and get an instant read on your roof. Then let us confirm it with a free, owner-led inspection.</p>
+          <p className="mt-5 text-lg text-steel">Answer four quick questions to see if your roof sounds like a rejuvenation candidate. Then let us confirm it with a free, owner-led inspection.</p>
           <div className="mt-8 flex items-center gap-3 text-sm font-semibold text-navy">
             <Camera className="h-5 w-5 text-blue" /> Every real inspection includes photos of what we find.
           </div>
@@ -451,7 +455,7 @@ function LocalBand() {
         <div className="wrap relative flex h-full flex-col justify-end pb-12 text-white">
           <Reveal>
             <p className="eyebrow on-dark">Local to West Michigan</p>
-            <h2 className="mt-4 max-w-3xl text-4xl sm:text-6xl">Proudly roofing Grand Rapids and the towns around it.</h2>
+            <h2 className="mt-4 max-w-3xl text-4xl sm:text-6xl">Proudly renewing roofs across Grand Rapids and Kent County.</h2>
           </Reveal>
         </div>
       </div>
@@ -499,7 +503,7 @@ function FaqSection() {
         <Reveal>
           <p className="eyebrow">FAQs</p>
           <h2 className="mt-4 text-4xl text-navy sm:text-5xl">Questions homeowners ask us.</h2>
-          <p className="mt-5 text-steel">Still wondering about something? Call — you'll talk to the owner.</p>
+          <p className="mt-5 text-steel">Still wondering if your roof can be renewed? Call — you'll talk to the owner.</p>
           <a href={`tel:${BUSINESS.phoneTel}`} className="font-display mt-6 inline-block text-3xl font-extrabold text-blue">
             {BUSINESS.phoneDisplay}
           </a>
@@ -524,7 +528,7 @@ function LeadSection() {
           <h2 className="mt-5 text-5xl leading-[1] sm:text-6xl">
             Let's get eyes on <span className="hl">your roof.</span>
           </h2>
-          <p className="mt-6 max-w-lg text-lg text-white/80">Answer a few quick questions and Bill will reach out to schedule your free inspection — or a phone consultation if you'd rather start there.</p>
+          <p className="mt-6 max-w-lg text-lg text-white/80">Answer a few quick questions and Bill will reach out to schedule your free inspection — and find out if your roof can be renewed before you replace it.</p>
           <div className="mt-10 space-y-3 text-white/85">
             <p className="flex items-center gap-3">
               <UserRound className="h-5 w-5 text-cyan" /> Owner-led inspection with photos

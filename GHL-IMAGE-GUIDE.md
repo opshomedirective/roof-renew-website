@@ -1,14 +1,16 @@
 # Image Guide — Roof-Renew
 
-Every image on the site, what it's called, and exactly where it goes.
+Every image on the site, its filename, and exactly where it goes.
 
 **How to use this guide in GoHighLevel**
 
 1. Upload every file in `/public/images` (also delivered in the `imagenes-para-ghl` folder) to the GHL Media Library **without renaming them**.
 2. Wherever this guide names a file, use the Media Library file with that exact name.
-3. Don't use any image that isn't on this list. No GHL stock, no AI-generated images, no placeholders.
+3. Do not use any image that isn't on this list: no GHL stock, AI-generated images or placeholders.
 
-All photos are licensed stock (Unsplash License — free for commercial use, no attribution required), chosen to look like West Michigan: snow, ice dams, fall color, Midwest homes and Grand Rapids itself. When Roof-Renew has photos of its own jobs, they should replace stock first on the service pages.
+All photos are licensed stock (Unsplash License, free for commercial use, no attribution required), picked to look like West Michigan.
+
+> **Priority for the client:** real photos of Roof-Renew applying the rejuvenation treatment, plus a real before/after of a treated roof. As soon as those exist, use them for the Home hero, the Before/After slider and the Roof Rejuvenation page. No good stock photo exists of a spray treatment on asphalt shingles, so we didn't use a fake one.
 
 ---
 
@@ -25,15 +27,16 @@ All photos are licensed stock (Unsplash License — free for commercial use, no 
 
 | # | Section | File(s) |
 |---|---|---|
-| 1 | **Hero background slideshow.** 4 images crossfade every 6.5 seconds with a slow zoom, in this order: | `home-dusk-porch-lights.jpg` → `michigan-fall-home-golden-trees.jpg` → `white-home-heavy-snow.jpg` → `stone-ranch-new-roof.jpg` |
-| 2 | Services: the 5 service cards | The **hero** image of each service (section 3) |
-| 3 | "From tired and mossy to clean and tight": **Before/After slider**, left side ("Before") | `moss-on-asphalt-shingles.jpg`. The right side ("After") is an SVG drawing of new shingles, not a photo. |
-| 4 | "What a Michigan year does to your roof": season tabs, one photo per tab | Winter `icicles-gutter-ice-dam.jpg` · Spring `shelf-cloud-lake.jpg` · Summer `aerial-suburban-home-gray-roof.jpg` · Fall `gutter-leaves-shingles.jpg` |
-| 5 | Ice dam diagram | No image. Animated SVG (see the master prompt). |
+| 1 | **Hero background slideshow.** 4 images crossfade every 6.5 seconds with a slow zoom, in this order | `home-dusk-porch-lights.jpg` → `michigan-fall-home-golden-trees.jpg` → `white-home-heavy-snow.jpg` → `stone-ranch-shingle-roof.jpg` |
+| 2 | "Renew your roof. Keep your thousands.": the 2 service cards | The **hero** image of each service (section 3) |
+| 3 | "Give aging shingles a second life": **Before/After slider**, left side ("Before · dry & faded") | `worn-shingles-texture.jpg`. The right side ("After · rejuvenated") is an SVG illustration, not a photo, and its caption says so. |
+| 4 | "Renew vs. replace": **"Is my roof a candidate?"** tab, left card (good candidate) | `worn-shingles-texture.jpg` |
+| 4 | Same tab, right card (probably not a candidate) | `missing-shingle-not-a-candidate.jpg` |
+| 5 | "What a Michigan year does to your shingles": one photo per season tab | Winter `icicles-gutter-ice-dam.jpg` · Spring `shelf-cloud-lake.jpg` · Summer `aerial-suburban-home-gray-roof.jpg` · Fall `gutter-leaves-shingles.jpg` |
 | 6 | "You talk to the owner. Not a salesperson.": large photo | `ladder-on-shingle-roof.jpg` |
-| 7 | "Proudly roofing Grand Rapids…": full-width band | `grand-rapids-skyline-bridge.jpg` |
-| 8 | Service area radar map | No image. Animated SVG. |
-| 9 | "Let's get eyes on your roof" form section: background (35% opacity) | `snowy-street-homes.jpg` |
+| 7 | "Proudly renewing roofs across Grand Rapids and Kent County": full-width band | `grand-rapids-skyline-bridge.jpg` |
+| 8 | Service area radar map | No image. It's an animated SVG. |
+| 9 | "Let's get eyes on your roof" form section: background at 35% opacity | `snowy-street-homes.jpg` |
 | 10 | Bottom CTA card (default) | `home-dusk-porch-lights.jpg` |
 
 ---
@@ -42,17 +45,14 @@ All photos are licensed stock (Unsplash License — free for commercial use, no 
 
 Each service page uses three images:
 
-- **Hero**: the full-screen background at the top. It's also the photo on that service's card everywhere on the site.
+- **Hero**: full-screen background at the top. It's also the image on that service's card everywhere on the site.
 - **Photo A**: the large photo in the intro section.
-- **Photo B**: the small overlapping photo in the intro. It's also the background of the CTA card at the bottom of the page.
+- **Photo B**: the small overlapping photo in the intro section. It's also the background of the CTA card at the bottom of the page.
 
 | Service | URL | Hero | Photo A | Photo B |
 |---|---|---|---|---|
-| Roof Replacement | `/services/roof-replacement` | `roofers-tear-off-old-roof.jpg` | `roofer-hammer-shingle-removal.jpg` | `aerial-suburban-home-gray-roof.jpg` |
-| Roof Repair & Leaks | `/services/roof-repair` | `rain-dripping-shingle-roof.jpg` | `ladder-on-shingle-roof.jpg` | `worn-shingle-roof-dormer.jpg` |
-| Free Roof Inspections | `/services/roof-inspections` | `older-shake-roof-dormers.jpg` | `attic-insulation-inspection.jpg` | `ladder-on-shingle-roof.jpg` |
-| Storm & Wind Damage | `/services/storm-wind-damage` | `storm-tree-damage-home.jpg` | `shelf-cloud-lake.jpg` | `worn-shingles-texture.jpg` |
-| Ice Dams & Ventilation | `/services/ice-dams-ventilation` | `icicles-gutter-ice-dam.jpg` | `attic-trusses-framing.jpg` | `snow-load-roof-edge.jpg` |
+| Roof Rejuvenation | `/services/roof-rejuvenation` | `aerial-suburban-home-gray-roof.jpg` | `worn-shingles-texture.jpg` | `stone-ranch-shingle-roof.jpg` |
+| Free Roof Inspection | `/services/roof-inspections` | `older-shake-roof-dormers.jpg` | `attic-insulation-inspection.jpg` | `ladder-on-shingle-roof.jpg` |
 
 ---
 
@@ -63,7 +63,7 @@ Each service page uses three images:
 | Section | File |
 |---|---|
 | Hero | `aerial-suburban-home-gray-roof.jpg` |
-| 5 alternating service rows | Hero of each service (section 3) |
+| 2 alternating service rows | Hero of each service (section 3) |
 | Bottom CTA card | `michigan-home-fall-driveway.jpg` |
 
 ### Michigan Roofs (guide) `/michigan-roofs`
@@ -74,7 +74,8 @@ Each service page uses three images:
 | Card "Lake-effect snow" | `snow-load-roof-edge.jpg` |
 | Card "Freeze–thaw cycles" | `icicles-roof-edge.jpg` |
 | Card "Wind off the lake" | `storm-over-lake.jpg` |
-| Season tabs | Same 4 photos as Home #4 |
+| "Renew vs. replace" block | Same images as Home #4 |
+| Season tabs | Same 4 photos as Home #5 |
 | Bottom CTA card | `red-home-snowy-yard.jpg` |
 
 ### About `/about`
@@ -82,8 +83,8 @@ Each service page uses three images:
 | Section | File |
 |---|---|
 | Hero | `brick-home-autumn-path.jpg` |
-| "Our story": large photo | `grand-rapids-river-skyline.jpg` |
-| "Our story": small overlapping photo | `attic-insulation-inspection.jpg` |
+| "Renew before you replace": large photo | `grand-rapids-river-skyline.jpg` |
+| Same section: small overlapping photo | `attic-insulation-inspection.jpg` |
 | Bottom CTA card | `fall-road-golden-trees.jpg` |
 
 ### Service Area `/service-area`
@@ -107,12 +108,12 @@ Each service page uses three images:
 
 ---
 
-## 5. Full file list (34 files)
+## 5. Full file list (28 files)
 
 **Brand (2):** `roof-renew-logo.png`, `roof-renew-favicon.png`
 
-**Homes & West Michigan (14):** `home-dusk-porch-lights.jpg`, `michigan-fall-home-golden-trees.jpg`, `white-home-heavy-snow.jpg`, `red-home-snowy-yard.jpg`, `stone-ranch-new-roof.jpg`, `brick-home-autumn-path.jpg`, `cozy-home-front-porch.jpg`, `michigan-home-fall-driveway.jpg`, `aerial-suburban-home-gray-roof.jpg`, `snowy-street-homes.jpg`, `grand-rapids-skyline-bridge.jpg`, `grand-rapids-river-skyline.jpg`, `grand-rapids-sunset.jpg`, `lake-michigan-dune-path.jpg`
+**Homes & West Michigan (14):** `home-dusk-porch-lights.jpg`, `michigan-fall-home-golden-trees.jpg`, `white-home-heavy-snow.jpg`, `red-home-snowy-yard.jpg`, `stone-ranch-shingle-roof.jpg`, `brick-home-autumn-path.jpg`, `cozy-home-front-porch.jpg`, `michigan-home-fall-driveway.jpg`, `aerial-suburban-home-gray-roof.jpg`, `snowy-street-homes.jpg`, `grand-rapids-skyline-bridge.jpg`, `grand-rapids-river-skyline.jpg`, `grand-rapids-sunset.jpg`, `lake-michigan-dune-path.jpg`
 
-**Roof work & details (12):** `roofers-tear-off-old-roof.jpg`, `roofer-hammer-shingle-removal.jpg`, `ladder-on-shingle-roof.jpg`, `older-shake-roof-dormers.jpg`, `worn-shingle-roof-dormer.jpg`, `worn-shingles-texture.jpg`, `moss-on-asphalt-shingles.jpg`, `rain-dripping-shingle-roof.jpg`, `gutter-leaves-shingles.jpg`, `attic-insulation-inspection.jpg`, `attic-trusses-framing.jpg`, `fall-road-golden-trees.jpg`
+**Shingles & inspection (7):** `worn-shingles-texture.jpg`, `missing-shingle-not-a-candidate.jpg`, `older-shake-roof-dormers.jpg`, `ladder-on-shingle-roof.jpg`, `attic-insulation-inspection.jpg`, `gutter-leaves-shingles.jpg`, `fall-road-golden-trees.jpg`
 
-**Winter & storms (6):** `icicles-gutter-ice-dam.jpg`, `icicles-roof-edge.jpg`, `snow-load-roof-edge.jpg`, `storm-tree-damage-home.jpg`, `storm-over-lake.jpg`, `shelf-cloud-lake.jpg`
+**Winter & weather (5):** `icicles-gutter-ice-dam.jpg`, `icicles-roof-edge.jpg`, `snow-load-roof-edge.jpg`, `storm-over-lake.jpg`, `shelf-cloud-lake.jpg`

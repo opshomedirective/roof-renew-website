@@ -5,12 +5,12 @@ import { ArrowRight, Phone, RotateCcw } from "lucide-react";
 import { BUSINESS, HEALTH_CHECK } from "../data/site";
 
 const RESULTS = [
-  { max: 2, tone: "bg-emerald-500", title: "Looking healthy", body: "Your roof sounds like it's in good shape. A free check every spring — after the snow melts — will keep it that way." },
-  { max: 5, tone: "bg-amber-500", title: "Worth a closer look", body: "A few warning signs. Small problems caught now are usually simple repairs. Let's get eyes on it before the next storm or snowfall." },
-  { max: 99, tone: "bg-red-500", title: "Time to talk renewal", body: "Several signs point to a roof near the end of its life — or a leak that needs attention now. Book a free inspection so you know exactly where you stand." },
+  { max: 3, tone: "bg-emerald-500", title: "Looks like a good candidate", body: "Aging but intact shingles are exactly what rejuvenation is designed for. Book a free inspection to confirm — it may save you thousands compared to a new roof." },
+  { max: 6, tone: "bg-amber-500", title: "Worth a closer look", body: "Your roof may still be a candidate, but a few answers need a closer look. A free, owner-led inspection will give you a clear answer with photos." },
+  { max: 99, tone: "bg-red-500", title: "May be past rejuvenation", body: "Leaks, missing shingles or soft spots usually mean rejuvenation won't help on its own. Let us take a look — we'll tell you honestly where your roof stands." },
 ];
 
-/** "Roof Health Check" — a 4-question self-assessment that ends in a CTA. */
+/** "Can my roof be renewed?" — a 4-question self-assessment that ends in a CTA. */
 export default function HealthCheck() {
   const [step, setStep] = useState(0);
   const [score, setScore] = useState(0);

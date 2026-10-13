@@ -10,7 +10,7 @@ import { useSEO } from "../seo";
 
 export default function ServiceArea() {
   useSEO({
-    title: "Service Area | Roofing in Grand Rapids, Kentwood, Wyoming & West Michigan | Roof-Renew",
+    title: "Service Area | Roof Rejuvenation in Grand Rapids, Kent County & West Michigan | Roof-Renew",
     description:
       "Roof-Renew serves a 50-mile radius around Grand Rapids: Kentwood, Wyoming, Grandville, Walker, Rockford, Lowell, Ada, Holland, Grand Haven, Muskegon, Hastings and more.",
   });
@@ -24,7 +24,7 @@ export default function ServiceArea() {
             Grand Rapids <span className="hl">+ 50 miles.</span>
           </>
         }
-        sub="Roofing for homeowners across Kent, Ottawa, Allegan, Barry, Ionia, Montcalm and Muskegon counties."
+        sub="Roof rejuvenation and free inspections for homeowners across Kent County, plus Ottawa, Allegan, Barry, Ionia, Montcalm and Muskegon counties."
         image={IMG.grSunset}
         imageAlt="Grand Rapids skyline at sunset"
         next="#0a1733"

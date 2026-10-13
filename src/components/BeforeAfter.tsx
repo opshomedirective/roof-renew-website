@@ -3,9 +3,10 @@ import { MoveHorizontal } from "lucide-react";
 import { IMG } from "../data/images";
 
 /**
- * "Renew" slider. LEFT = real photo of worn, mossy shingles.
- * RIGHT = an SVG illustration of a new architectural shingle system.
- * It is labeled as an illustration — it is not a before/after of one job.
+ * "Renew" slider. LEFT = real photo of aging, dry asphalt shingles.
+ * RIGHT = an SVG illustration of rejuvenated shingles (richer, even color).
+ * It is labeled as an illustration — NOT a before/after of a real job.
+ * Replace with a real Roof-Renew before/after pair as soon as one exists.
  */
 function NewShingles() {
   const rows = 9;
@@ -85,10 +86,10 @@ export default function BeforeAfter() {
           <NewShingles />
         </div>
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
-          <img src={IMG.mossShingles} alt="Worn asphalt shingles with moss growing on them" className="h-full w-full object-cover" draggable={false} />
+          <img src={IMG.wornTexture} alt="Aging, dried-out asphalt shingles" className="h-full w-full object-cover" draggable={false} />
         </div>
-        <span className="absolute top-4 left-4 rounded-full bg-night/75 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">Before · worn & mossy</span>
-        <span className="absolute top-4 right-4 rounded-full bg-blue px-3 py-1.5 text-xs font-bold text-white">After · renewed</span>
+        <span className="absolute top-4 left-4 rounded-full bg-night/75 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">Before · dry & faded</span>
+        <span className="absolute top-4 right-4 rounded-full bg-blue px-3 py-1.5 text-xs font-bold text-white">After · rejuvenated</span>
         <div className="absolute inset-y-0 w-1 -translate-x-1/2 bg-white shadow-[0_0_20px_rgba(47,198,255,.9)]" style={{ left: `${pos}%` }}>
           <span className="absolute top-1/2 left-1/2 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-blue shadow-xl">
             <MoveHorizontal className="h-5 w-5" />
@@ -100,11 +101,11 @@ export default function BeforeAfter() {
           max={96}
           value={pos}
           onChange={(e) => setPos(Number(e.target.value))}
-          aria-label="Compare worn and renewed roof"
+          aria-label="Compare aging and rejuvenated shingles"
           className="absolute inset-x-0 bottom-0 h-8 w-full cursor-ew-resize opacity-0"
         />
       </div>
-      <p className="mt-3 text-center text-xs text-steel">Drag to compare. Left: real photo of a worn roof. Right: illustration of a new architectural shingle system.</p>
+      <p className="mt-3 text-center text-xs text-steel">Drag to compare. Left: photo of aging shingles. Right: illustration of rejuvenated shingles — results vary by roof.</p>
     </div>
   );
 }

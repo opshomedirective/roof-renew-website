@@ -9,7 +9,7 @@ import { useSEO } from "../seo";
 export default function Contact() {
   useSEO({
     title: "Contact Roof-Renew | Free Roof Inspection in Grand Rapids, MI",
-    description: "Book a free, owner-led roof inspection or phone consultation with Roof-Renew. Call (616) 265-9270 — open 7AM to 8PM.",
+    description: "Find out if your roof can be renewed. Book a free, owner-led inspection or phone consultation with Roof-Renew. Call (616) 265-9270, Monday–Saturday 7AM–8PM.",
   });
 
   return (
@@ -21,7 +21,7 @@ export default function Contact() {
             Let's take a look at <span className="hl">your roof.</span>
           </>
         }
-        sub="Book a free inspection or start with a quick phone consultation — whichever is easier for you."
+        sub="Find out if your roof can be renewed. Book a free inspection or start with a quick phone consultation, whichever is easier for you."
         image={IMG.cozyPorch}
         imageAlt="Cozy home with a front porch"
         crumbs={[{ label: "Contact" }]}

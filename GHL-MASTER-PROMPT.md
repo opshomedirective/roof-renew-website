@@ -20,39 +20,46 @@ Read the whole repository before you build anything:
   3) src/index.css        ← the full design system
   4) src/data/site.ts     ← business info, promises, process, seasons,
                             health-check questions, service areas, FAQ
-  5) src/data/services.ts ← every word of the 5 service pages
+  5) src/data/services.ts ← every word of the 2 service pages
   6) src/pages/*.tsx      ← every page, section by section, in order
   7) src/components/*.tsx ← header, footer, cards, slider, diagrams, form, map
 
 Use all the text WORD FOR WORD. Do not rewrite, shorten or add copy.
+
+WHAT ROOF-RENEW SELLS (this must match the Facebook ads exactly):
+ROOF REJUVENATION, a spray-applied treatment for aging asphalt shingles,
+plus a FREE INSPECTION to check whether a roof is a candidate.
+Core message: "Before you replace your roof, see if you can renew it first."
+Always keep the claims hedged the way the site words them ("may help restore",
+"may extend", "save thousands vs. replacement"). Do NOT add roof replacement,
+repairs, storm damage, ventilation or any other service.
 
 ══════════════════════════════════════════════════════════════════
 2. PAGES (same URLs)
 ══════════════════════════════════════════════════════════════════
 /                                   Home
 /services                           Services hub
-/services/roof-replacement
-/services/roof-repair
-/services/roof-inspections
-/services/storm-wind-damage
-/services/ice-dams-ventilation
-/michigan-roofs                     West Michigan roof guide (educational)
+/services/roof-rejuvenation          (flagship service)
+/services/roof-inspections           (free candidate inspection)
+/michigan-roofs                     West Michigan guide: why shingles age, renew vs. replace
 /about
 /service-area
 /contact
 404 page
 
-All 5 service pages share ONE template (src/pages/ServiceDetail.tsx):
+Both service pages share ONE template (src/pages/ServiceDetail.tsx):
 Hero (photo + title + tagline + 2 buttons + 3 badges + curved swoosh at the
 bottom) → Intro (headline, 2 paragraphs, 2 overlapping photos) → "Know the
 signs" grid of 6 cards → "What's included" checklist + 4-step timeline +
 sticky multi-step form → city marquee → FAQ → 3 related services → CTA card.
 
-Home sections in order: Hero slideshow → 4 trust cards → Services grid
-(5 cards + blue "Not sure what you need?" card) → Before/After slider →
-Seasons tabs → Ice-dam diagram → "You talk to the owner" (navy) →
-4-step process → 60-second Roof Health Check → Grand Rapids skyline band +
-city marquee → Service area radar map (navy) → FAQ → Lead form section.
+Home sections in order: Hero slideshow ("Before you replace your roof…
+see if you can renew it first.") → 4 trust cards → Services (2 cards + blue
+"Can my roof be renewed?" card) → "What is roof rejuvenation?" + Before/After
+slider → "Renew vs. replace" (tabbed comparison table / candidate check) →
+Seasons tabs → "You talk to the owner" (navy) → 4-step process → 60-second
+candidate check → Grand Rapids skyline band + city marquee → Service area
+radar map (navy) → FAQ → Lead form section.
 
 ══════════════════════════════════════════════════════════════════
 3. DESIGN SYSTEM (src/index.css): keep it identical
@@ -77,10 +84,10 @@ Fonts (Google Fonts):
 Signature elements:
   • The "RENEW SWOOSH": a curved blue→cyan line with a thin silver line
     above it, taken from the arcs in the logo. It sits at the bottom of every
-    hero and blends into the next section. The word "renewed." in the Home
-    headline is underlined with an animated swoosh.
-  • Headline accent words use a blue→cyan gradient text ("renewed.",
-    "the first time.", "They're a warning.").
+    hero and blends into the next section. The words "renew it" in the Home
+    headline are underlined with an animated swoosh.
+  • Headline accent words use a blue→cyan gradient text ("renew it",
+    "Keep your thousands.", "a second life.").
   • Eyebrow labels: small uppercase blue text with a glowing round dot.
   • Pill buttons: primary is a blue gradient with a blue glow, glass
     (translucent white outline) on dark, outline on light.
@@ -95,17 +102,21 @@ They're the heart of the site, so do NOT drop them:
     indicator bars, headline revealed word by word, and a floating glass card
     on the right ("Owner-led inspections · Bill Roberson").
   • BEFORE/AFTER SLIDER (src/components/BeforeAfter.tsx): drag handle.
-    Left = photo of mossy shingles. Right = SVG drawing of new shingles. Keep
-    the caption that says the right side is an illustration.
+    Left = photo of dry, faded shingles. Right = SVG illustration of
+    rejuvenated shingles. Keep the caption that says the right side is an
+    illustration and results vary.
+  • RENEW VS. REPLACE (RenewVsReplace.tsx): a toggle with two views.
+    (1) A comparison table, Rejuvenate (blue column) vs. Replace (navy
+    column): Cost, Tear-off & dumpster, Old shingles to the landfill,
+    Disruption, Fixes leaks & missing shingles, Best for.
+    (2) "Is my roof a candidate?": two cards with photos, likely a good
+    candidate (blue checks) vs. probably not a candidate (orange X's).
   • SEASON TABS (SeasonTabs.tsx): Winter / Spring / Summer / Fall buttons
     that swap the photo, the big season word, and the text + 3 checks.
-  • ICE DAM DIAGRAM (IceDamDiagram.tsx): animated SVG cross-section with a
-    toggle "Without protection / With a Roof-Renew system", numbered markers
-    on the drawing that match a numbered list beside it, rising heat, melting
-    water and leak animation vs. cold airflow from soffit to ridge vent.
-  • ROOF HEALTH CHECK (HealthCheck.tsx): 4 questions with point values,
-    progress bar, then a result (green / amber / red) with CTA buttons. Use
-    the same questions, points and result copy.
+  • CANDIDATE CHECK (HealthCheck.tsx): 4 questions with point values, a
+    progress bar, then a result: green "Looks like a good candidate", amber
+    "Worth a closer look", red "May be past rejuvenation", with CTA buttons.
+    Use the same questions, points and result copy.
   • 4-STEP PROCESS with a dashed blue swoosh line connecting the numbered
     circles, drawn on scroll.
   • SERVICE AREA RADAR MAP (AreaMap.tsx): cyan dashed 50-mile circle around
@@ -118,16 +129,17 @@ They're the heart of the site, so do NOT drop them:
 ══════════════════════════════════════════════════════════════════
 4. HEADER, FOOTER, MOBILE (on every page)
 ══════════════════════════════════════════════════════════════════
-Info bar (night navy): "Free roof inspections — done by the owner" on the
-left; "Open 7AM – 8PM" and "(616) 265-9270" on the right.
+Info bar (night navy): "Before you replace your roof — see if you can renew
+it first" on the left; "Open Mon–Sat · 7AM – 8PM" and "(616) 265-9270" on
+the right.
 
 Header (transparent over the hero, solid navy after scrolling):
   • Logo roof-renew-logo.png (with a soft cyan glow)
-  • Nav: Services (dropdown card listing the 5 services with icon + short
+  • Nav: Services (dropdown card listing the 2 services with icon + short
     line) · Michigan Roofs · About · Service Area · Contact
   • Blue pill button "Free Inspection"
 
-Mobile: a hamburger opens a full-screen navy menu (pages + 5 services +
+Mobile: a hamburger opens a full-screen navy menu (pages + 2 services +
 call button), plus a sticky bottom bar that's always visible with
 "Call now" (tel:+16162659270) and "Free inspection".
 
@@ -150,9 +162,9 @@ src/components/LeadForm.tsx is a design reference. Replace it with a NATIVE
 GHL multi-step Form/Survey with the same questions in the same order,
 styled to match (white card, blue→cyan progress bar, option tiles):
   Step 1 "What's going on with your roof?"
-         Leak or water stain / Missing or damaged shingles /
-         Storm or wind damage / Ice dams or big icicles /
-         Thinking about a new roof / Just want an inspection
+         Roof looks old or faded / Granules in the gutters /
+         Was told I need a new roof / Want to see if I can renew it /
+         Leak or missing shingles / Just want an inspection
   Step 2 "Tell us about the property."
          Home I live in / Rental property / Home I'm buying or selling / Other
   Step 3 "How would you like to start?"
@@ -178,16 +190,19 @@ calendar. Every phone link uses tel:+16162659270. Timezone: US/Eastern.
 Business name: Roof-Renew
 Owner / inspector: Bill Roberson
 Phone: (616) 265-9270
-Hours: 7AM – 8PM (Eastern)
-Service area: Grand Rapids & West Michigan, 50-mile radius around ZIP 49512
-Services: roofing only (the 5 services above)
+Hours: Monday – Saturday, 7AM – 8PM (Eastern). Closed Sunday.
+Service area: Kent County / Grand Rapids & West Michigan, 50-mile radius
+  around ZIP 49512
+Services: Roof rejuvenation + free roof inspection ONLY
 
 DO NOT publish anywhere on the site: the legal entity name, EIN, any street
 address, or any personal email address. Leave them out on purpose. No street
 address is shown.
 DO NOT add offers, discounts, financing, insurance-claim assistance,
-warranties, reviews/star ratings, license numbers, years in business or any
-claim that isn't already in the repository. The client hasn't provided them yet.
+warranties, guaranteed lifespans (e.g. "adds 5–10 years"), prices, product
+brand names, reviews or star ratings, license numbers, years in business, or
+any claim that isn't already in the repository. The client hasn't provided
+any of them.
 
 ══════════════════════════════════════════════════════════════════
 8. SEO
@@ -201,8 +216,11 @@ code), favicon = roof-renew-favicon.png.
 ══════════════════════════════════════════════════════════════════
 □ Every page above exists, with the same section order, on desktop and mobile.
 □ Home hero slideshow works (background is never blank).
-□ Before/After slider, season tabs, ice-dam toggle, health check and radar
-  map all work.
+□ The Home hero headline matches the ads: "Before you replace your roof…
+  see if you can renew it first."
+□ Before/After slider, Renew vs. Replace toggle, season tabs, candidate
+  check and radar map all work.
+□ No replacement, repair, storm or ventilation services anywhere.
 □ No street address, legal name, EIN or email address appears anywhere.
 □ No invented offers, reviews, warranties or financing.
 □ No placeholder text, no broken links, no missing images.

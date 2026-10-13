@@ -12,7 +12,7 @@ const STEPS = [
   {
     key: "issue",
     q: "What's going on with your roof?",
-    options: ["Leak or water stain", "Missing or damaged shingles", "Storm or wind damage", "Ice dams or big icicles", "Thinking about a new roof", "Just want an inspection"],
+    options: ["Roof looks old or faded", "Granules in the gutters", "Was told I need a new roof", "Want to see if I can renew it", "Leak or missing shingles", "Just want an inspection"],
   },
   {
     key: "property",

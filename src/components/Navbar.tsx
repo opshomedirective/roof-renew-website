@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="wrap flex h-9 items-center justify-center gap-6 text-[11px] font-semibold sm:justify-between sm:text-xs">
           <p className="flex items-center gap-2">
             <ScanSearch className="h-3.5 w-3.5 text-cyan" />
-            Free roof inspections — done by the owner
+            Before you replace your roof — see if you can renew it first
           </p>
           <div className="hidden items-center gap-6 sm:flex">
             <span className="inline-flex items-center gap-1.5 text-white/75">

@@ -3,7 +3,7 @@ import { ArrowRight, Snowflake, Thermometer, Wind } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import SeasonTabs from "../components/SeasonTabs";
-import IceDamDiagram from "../components/IceDamDiagram";
+import RenewVsReplace from "../components/RenewVsReplace";
 import HealthCheck from "../components/HealthCheck";
 import CTASection from "../components/CTASection";
 import { IMG } from "../data/images";
@@ -13,27 +13,27 @@ const THREATS = [
   {
     icon: Snowflake,
     k: "Lake-effect snow",
-    b: "West Michigan sits downwind of Lake Michigan. Heavy, wet lake-effect snow can sit on a roof for weeks, adding weight and feeding ice dams.",
+    b: "West Michigan sits downwind of Lake Michigan. Heavy, wet snow can sit on a roof for weeks, and every melt soaks and dries the shingles again.",
     img: IMG.snowEdge,
   },
   {
     icon: Thermometer,
     k: "Freeze–thaw cycles",
-    b: "Temperatures bounce above and below freezing all winter. Water gets into tiny gaps, freezes, expands — and every cycle makes the gap a little bigger.",
+    b: "Temperatures bounce above and below freezing all winter. Shingles that have dried out and turned brittle crack and shed granules faster with every cycle.",
     img: IMG.iciclesEdge,
   },
   {
     icon: Wind,
     k: "Wind off the lake",
-    b: "Strong west and southwest winds lift shingle tabs and break their seal. Once a tab is loose, the next storm usually takes it.",
+    b: "Strong west winds flex and lift shingles. Flexible shingles bend and settle back; dry, brittle ones are the ones that crack and blow off.",
     img: IMG.stormLake,
   },
 ];
 
 export default function MichiganRoofs() {
   useSEO({
-    title: "Michigan Roof Guide: Ice Dams, Snow & Storms | Roof-Renew",
-    description: "How lake-effect snow, ice dams, freeze-thaw cycles and lake wind affect West Michigan roofs — plus a free 60-second roof health check.",
+    title: "Michigan Roof Guide: Why Shingles Age & When to Renew | Roof-Renew",
+    description: "How lake-effect snow, freeze-thaw cycles, summer heat and lake wind age asphalt shingles in West Michigan — and how to tell if your roof can be renewed instead of replaced.",
   });
 
   return (
@@ -45,7 +45,7 @@ export default function MichiganRoofs() {
             Michigan is hard on roofs. <span className="hl">Here's why.</span>
           </>
         }
-        sub="Lake-effect snow, ice dams, freeze-thaw cycles and lake wind — what they do to your roof, and how to stay ahead of them."
+        sub="Lake-effect snow, freeze-thaw cycles, summer heat and lake wind slowly dry out your shingles. Here's what that means — and when a roof can be renewed instead of replaced."
         image={IMG.whiteHomeSnow}
         imageAlt="Home with a heavy snow-covered roof in winter"
         crumbs={[{ label: "Michigan Roofs" }]}
@@ -55,7 +55,7 @@ export default function MichiganRoofs() {
         <div className="wrap">
           <Reveal className="max-w-3xl">
             <p className="eyebrow">The big three</p>
-            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">What West Michigan weather throws at your roof.</h2>
+            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">What West Michigan weather does to your shingles.</h2>
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {THREATS.map(({ icon: I, k, b, img }, i) => (
@@ -79,11 +79,11 @@ export default function MichiganRoofs() {
       <section className="dots bg-ice py-16 lg:py-24">
         <div className="wrap">
           <Reveal className="max-w-3xl">
-            <p className="eyebrow">Ice dams, explained</p>
-            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">How an ice dam turns into a leak.</h2>
+            <p className="eyebrow">Renew vs. replace</p>
+            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">Aging roof? You may not need a full replacement.</h2>
           </Reveal>
           <Reveal className="mt-12">
-            <IceDamDiagram />
+            <RenewVsReplace />
           </Reveal>
         </div>
       </section>
@@ -103,8 +103,8 @@ export default function MichiganRoofs() {
       <section className="dots bg-ice py-16 lg:py-24">
         <div className="wrap grid items-center gap-12 lg:grid-cols-[1fr_1.3fr]">
           <Reveal>
-            <p className="eyebrow">60-second roof health check</p>
-            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">How's your roof holding up?</h2>
+            <p className="eyebrow">60-second candidate check</p>
+            <h2 className="mt-4 text-4xl text-navy sm:text-5xl">Can your roof be renewed?</h2>
             <p className="mt-5 text-lg text-steel">Four quick questions. Then confirm it with a free, owner-led inspection.</p>
             <Link to="/services/roof-inspections" className="btn btn-outline mt-8 text-navy">
               About our inspections <ArrowRight className="h-4 w-4" />
@@ -116,7 +116,7 @@ export default function MichiganRoofs() {
         </div>
       </section>
 
-      <CTASection title="Get ahead of the next Michigan winter." image={IMG.redHomeSnow} />
+      <CTASection title="Renew your shingles before the next Michigan winter." image={IMG.redHomeSnow} />
     </>
   );
 }

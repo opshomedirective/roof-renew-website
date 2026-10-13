@@ -1,8 +1,8 @@
 # Roof-Renew — Website
 
-The new marketing website for **Roof-Renew**, a roofing company serving Grand Rapids and West Michigan.
+The new marketing website for **Roof-Renew**, a **roof rejuvenation** company serving Grand Rapids, Kent County and West Michigan.
 
-*Your roof, renewed. Built for Michigan winters.*
+*Before you replace your roof, see if you can renew it first.*
 
 This repository is the **approved design source**. It is meant to be cloned into GoHighLevel.
 
@@ -24,18 +24,18 @@ npm run dev
 ## Structure
 
 ```
-public/images/        All 34 site images, with descriptive filenames (licensed stock + logo)
+public/images/        All 28 site images, with descriptive filenames (licensed stock + logo)
 src/
   index.css           Design system: navy + electric blue + cyan, Archivo (wide) + Manrope,
                       the "renew swoosh", gradient accent text, pill buttons
   data/
     site.ts           Business info (public-safe only), promises, process, seasons,
                       health-check questions, service areas with coordinates, FAQ, nav
-    services.ts       The 5 service pages (copy, signs, includes, FAQs, images)
+    services.ts       The 2 service pages: Roof Rejuvenation + Free Roof Inspection
     images.ts         Single source of truth: image key → filename
   components/         Navbar, Footer, Swoosh, PageHero, ServiceCard, LeadForm (multi-step),
-                      BeforeAfter (slider), SeasonTabs, IceDamDiagram (animated SVG),
-                      HealthCheck (quiz), AreaMap (radar + Lake Michigan), Marquee, FAQ, CTASection
+                      BeforeAfter (slider), RenewVsReplace (comparison + candidate check),
+                      SeasonTabs, HealthCheck (candidate quiz), AreaMap (radar + Lake Michigan), Marquee, FAQ, CTASection
   pages/              Home, Services, ServiceDetail, MichiganRoofs, About,
                       ServiceArea, Contact, NotFound
 ```
@@ -46,8 +46,8 @@ src/
 |---|---|
 | `/` | Home |
 | `/services` | Services hub |
-| `/services/:slug` | 5 service pages |
-| `/michigan-roofs` | West Michigan roof guide (ice dams, seasons, health check) |
+| `/services/:slug` | Roof Rejuvenation, Free Roof Inspection |
+| `/michigan-roofs` | West Michigan guide: why shingles age, renew vs. replace, candidate check |
 | `/about` | About |
 | `/service-area` | 50-mile radius around Grand Rapids, radar map |
 | `/contact` | Contact & inspection form |
@@ -67,4 +67,6 @@ src/
 
 - Public info is limited to: business name, owner name, phone, hours and service area.
 - No legal entity name, EIN, street address or email address on the site.
-- No offers, financing, insurance-claim help, reviews or warranties until the client provides them.
+- The site sells ROOF REJUVENATION (matching the ad campaign), with hedged claims. No replacement/repair services.
+- No offers, financing, insurance-claim help, reviews, warranties, prices or lifespan numbers until the client provides them.
+- Hours: Monday – Saturday, 7AM – 8PM (Eastern).

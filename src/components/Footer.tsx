@@ -12,8 +12,8 @@ export default function Footer() {
         <div>
           <Logo className="h-24" />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-mist">
-            Roof-Renew is a West Michigan roofing company serving Grand Rapids and the communities around it. Owner-led inspections, honest recommendations and roofs
-            built for Michigan winters.
+            Roof-Renew offers roof rejuvenation for aging asphalt shingle roofs across Grand Rapids, Kent County and West Michigan. Before you replace your roof, see
+            if you can renew it first.
           </p>
           <Link to="/contact" className="btn btn-blue mt-6 !py-3">
             <ScanSearch className="h-4 w-4" /> Book a free inspection

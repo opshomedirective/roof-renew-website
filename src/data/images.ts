@@ -5,7 +5,8 @@
 // name to the Media Library and swap the path for its GHL URL.
 //
 // All photos are licensed stock (Unsplash License) chosen to look
-// like West Michigan, until Roof-Renew has its own job photos.
+// like West Michigan. PRIORITY: replace with real Roof-Renew photos —
+// especially the rejuvenation spray application and a real before/after.
 // ─────────────────────────────────────────────────────────────
 const p = (file: string) => `/images/${file}`;
 
@@ -30,27 +31,22 @@ export const IMG = {
   fallHome: p("michigan-fall-home-golden-trees.jpg"),
   brickAutumn: p("brick-home-autumn-path.jpg"),
   cozyPorch: p("cozy-home-front-porch.jpg"),
-  stoneRanch: p("stone-ranch-new-roof.jpg"),
+  stoneRanch: p("stone-ranch-shingle-roof.jpg"),
   fallDriveway: p("michigan-home-fall-driveway.jpg"),
 
   // Roofing work & details
-  tearOff: p("roofers-tear-off-old-roof.jpg"),
-  hammerRemoval: p("roofer-hammer-shingle-removal.jpg"),
   ladderRoof: p("ladder-on-shingle-roof.jpg"),
   dormers: p("older-shake-roof-dormers.jpg"),
-  wornDormer: p("worn-shingle-roof-dormer.jpg"),
   wornTexture: p("worn-shingles-texture.jpg"),
-  mossShingles: p("moss-on-asphalt-shingles.jpg"),
-  rainDrip: p("rain-dripping-shingle-roof.jpg"),
   gutterLeaves: p("gutter-leaves-shingles.jpg"),
   atticInsulation: p("attic-insulation-inspection.jpg"),
-  atticTrusses: p("attic-trusses-framing.jpg"),
+
+  notCandidate: p("missing-shingle-not-a-candidate.jpg"),
 
   // Winter & storms
   snowEdge: p("snow-load-roof-edge.jpg"),
   icicleGutter: p("icicles-gutter-ice-dam.jpg"),
   iciclesEdge: p("icicles-roof-edge.jpg"),
-  stormTree: p("storm-tree-damage-home.jpg"),
   stormLake: p("storm-over-lake.jpg"),
   shelfCloud: p("shelf-cloud-lake.jpg"),
 } as const;
