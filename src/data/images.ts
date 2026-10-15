@@ -38,6 +38,9 @@ export const IMG = {
   ladderRoof: p("ladder-on-shingle-roof.jpg"),
   dormers: p("older-shake-roof-dormers.jpg"),
   wornTexture: p("worn-shingles-texture.jpg"),
+  agingShingles: p("aging-asphalt-shingles.jpg"),
+  /** Digital ILLUSTRATION made from aging-asphalt-shingles.jpg (same roof). Not a real result. */
+  renewedShingles: p("renewed-shingles-illustration.jpg"),
   gutterLeaves: p("gutter-leaves-shingles.jpg"),
   atticInsulation: p("attic-insulation-inspection.jpg"),
 

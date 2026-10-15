@@ -166,10 +166,14 @@ They're the heart of the site, so do NOT drop them:
   • HOME HERO: 4 background photos crossfading every 6.5s with a slow zoom,
     indicator bars, headline revealed word by word, and a floating glass card
     on the right ("Owner-led inspections · Bill Roberson").
-  • BEFORE/AFTER SLIDER (src/components/BeforeAfter.tsx): drag handle.
-    Left = photo of dry, faded shingles. Right = SVG illustration of
-    rejuvenated shingles. Keep the caption that says the right side is an
-    illustration and results vary.
+  • RENEW SLIDER (src/components/BeforeAfter.tsx): do NOT rebuild it by
+    hand. Paste the ready-made code from ghl-embeds/renew-slider.html into
+    a Custom HTML/Code element and replace AGING_IMAGE_URL and
+    RENEWED_IMAGE_URL with the Media Library URLs of
+    aging-asphalt-shingles.jpg and renewed-shingles-illustration.jpg.
+    Same roof on both sides; a spray bar sweeps across once on scroll, then
+    it's draggable. Labels and caption are inside the code. Don't add any
+    other overlay text.
   • RENEW VS. REPLACE (RenewVsReplace.tsx): a toggle with two views.
     (1) A comparison table, Rejuvenate (blue column) vs. Replace (navy
     column): Cost, Tear-off & dumpster, Old shingles to the landfill,

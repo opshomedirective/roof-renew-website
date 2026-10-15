@@ -31,7 +31,7 @@ All photos are licensed stock (Unsplash License, free for commercial use, no att
 |---|---|---|
 | 1 | **Hero background slideshow.** 4 images crossfade every 6.5 seconds with a slow zoom, in this order | `home-dusk-porch-lights.jpg` → `michigan-fall-home-golden-trees.jpg` → `white-home-heavy-snow.jpg` → `stone-ranch-shingle-roof.jpg` |
 | 2 | "Renew your roof. Keep your thousands.": the 2 service cards | The **hero** image of each service (section 3) |
-| 3 | "Give aging shingles a second life": **Before/After slider**, left side ("Before · dry & faded") | `worn-shingles-texture.jpg`. The right side ("After · rejuvenated") is an SVG illustration, not a photo, and its caption says so. |
+| 3 | "Give aging shingles a second life": **Renew slider** (Custom HTML from `ghl-embeds/renew-slider.html`) | Left ("Today: aging"): `aging-asphalt-shingles.jpg` · Right ("The goal: renewed"): `renewed-shingles-illustration.jpg`. Same roof. The right side is a **digital illustration** made from the left photo (lichen and chalking removed, tone deepened), labeled as such on the image and in the caption. Replace it with a real Roof-Renew before/after (same roof, same angle) as soon as Bill has one. |
 | 4 | "Renew vs. replace": **"Is my roof a candidate?"** tab, left card (good candidate) | `worn-shingles-texture.jpg` |
 | 4 | Same tab, right card (probably not a candidate) | `missing-shingle-not-a-candidate.jpg` |
 | 5 | "What a Michigan year does to your shingles": one photo per season tab | Winter `icicles-gutter-ice-dam.jpg` · Spring `shelf-cloud-lake.jpg` · Summer `aerial-suburban-home-gray-roof.jpg` · Fall `gutter-leaves-shingles.jpg` |
@@ -123,12 +123,12 @@ Service cards, Renew vs. Replace and Season tabs reuse the same images as on Hom
 
 ---
 
-## 5. Full file list (28 files)
+## 5. Full file list (30 files)
 
 **Brand (2):** `roof-renew-logo.png`, `roof-renew-favicon.png`
 
 **Homes & West Michigan (14):** `home-dusk-porch-lights.jpg`, `michigan-fall-home-golden-trees.jpg`, `white-home-heavy-snow.jpg`, `red-home-snowy-yard.jpg`, `stone-ranch-shingle-roof.jpg`, `brick-home-autumn-path.jpg`, `cozy-home-front-porch.jpg`, `michigan-home-fall-driveway.jpg`, `aerial-suburban-home-gray-roof.jpg`, `snowy-street-homes.jpg`, `grand-rapids-skyline-bridge.jpg`, `grand-rapids-river-skyline.jpg`, `grand-rapids-sunset.jpg`, `lake-michigan-dune-path.jpg`
 
-**Shingles & inspection (7):** `worn-shingles-texture.jpg`, `missing-shingle-not-a-candidate.jpg`, `older-shake-roof-dormers.jpg`, `ladder-on-shingle-roof.jpg`, `attic-insulation-inspection.jpg`, `gutter-leaves-shingles.jpg`, `fall-road-golden-trees.jpg`
+**Shingles & inspection (9):** `aging-asphalt-shingles.jpg`, `renewed-shingles-illustration.jpg`, `worn-shingles-texture.jpg`, `missing-shingle-not-a-candidate.jpg`, `older-shake-roof-dormers.jpg`, `ladder-on-shingle-roof.jpg`, `attic-insulation-inspection.jpg`, `gutter-leaves-shingles.jpg`, `fall-road-golden-trees.jpg`
 
 **Winter & weather (5):** `icicles-gutter-ice-dam.jpg`, `icicles-roof-edge.jpg`, `snow-load-roof-edge.jpg`, `storm-over-lake.jpg`, `shelf-cloud-lake.jpg`
