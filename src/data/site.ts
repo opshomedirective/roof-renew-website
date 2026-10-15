@@ -79,40 +79,79 @@ export const HEALTH_CHECK = [
   { q: "How does the roof look overall?", options: [["Fine, just tired-looking", 0], ["Dark streaks or moss", 1], ["Not sure", 1], ["Sagging or soft spots", 5]] },
 ] as const;
 
-export type Area = { name: string; lat: number; lng: number; region: string };
+export type Area = {
+  name: string;
+  slug: string;
+  county: string;
+  lat: number;
+  lng: number;
+  region: string;
+  /** One unique, factual line about the town (used on its SEO page). */
+  note: string;
+};
+
+const slugify = (n: string) => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const A = (name: string, county: string, lat: number, lng: number, region: string, note: string): Area => ({ name, slug: slugify(name), county, lat, lng, region, note });
 
 export const AREAS: Area[] = [
-  { name: "Grand Rapids", lat: 42.9634, lng: -85.6681, region: "Grand Rapids Metro" },
-  { name: "Kentwood", lat: 42.8695, lng: -85.6447, region: "Grand Rapids Metro" },
-  { name: "Wyoming", lat: 42.9134, lng: -85.7053, region: "Grand Rapids Metro" },
-  { name: "Grandville", lat: 42.9097, lng: -85.7631, region: "Grand Rapids Metro" },
-  { name: "Walker", lat: 42.9861, lng: -85.7681, region: "Grand Rapids Metro" },
-  { name: "Cascade", lat: 42.9161, lng: -85.4964, region: "Grand Rapids Metro" },
-  { name: "East Grand Rapids", lat: 42.9414, lng: -85.6103, region: "Grand Rapids Metro" },
-  { name: "Byron Center", lat: 42.8122, lng: -85.7228, region: "Grand Rapids Metro" },
-  { name: "Caledonia", lat: 42.7892, lng: -85.5164, region: "Grand Rapids Metro" },
-  { name: "Ada", lat: 42.9553, lng: -85.495, region: "North & East" },
-  { name: "Lowell", lat: 42.9336, lng: -85.3417, region: "North & East" },
-  { name: "Rockford", lat: 43.12, lng: -85.5603, region: "North & East" },
-  { name: "Cedar Springs", lat: 43.2234, lng: -85.5514, region: "North & East" },
-  { name: "Sparta", lat: 43.1606, lng: -85.71, region: "North & East" },
-  { name: "Belding", lat: 43.0978, lng: -85.2289, region: "North & East" },
-  { name: "Greenville", lat: 43.1775, lng: -85.2528, region: "North & East" },
-  { name: "Ionia", lat: 42.9872, lng: -85.0711, region: "North & East" },
-  { name: "Jenison", lat: 42.9072, lng: -85.792, region: "Lakeshore" },
-  { name: "Hudsonville", lat: 42.8708, lng: -85.8653, region: "Lakeshore" },
-  { name: "Allendale", lat: 42.9722, lng: -85.9536, region: "Lakeshore" },
-  { name: "Zeeland", lat: 42.8125, lng: -86.0187, region: "Lakeshore" },
-  { name: "Holland", lat: 42.7875, lng: -86.1089, region: "Lakeshore" },
-  { name: "Grand Haven", lat: 43.0631, lng: -86.2284, region: "Lakeshore" },
-  { name: "Muskegon", lat: 43.2342, lng: -86.2484, region: "Lakeshore" },
-  { name: "Middleville", lat: 42.7131, lng: -85.4619, region: "South" },
-  { name: "Wayland", lat: 42.6736, lng: -85.6447, region: "South" },
-  { name: "Hastings", lat: 42.6464, lng: -85.2908, region: "South" },
-  { name: "Allegan", lat: 42.5292, lng: -85.8553, region: "South" },
-  { name: "Kalamazoo", lat: 42.2917, lng: -85.5872, region: "South" },
-  { name: "Battle Creek", lat: 42.3211, lng: -85.1797, region: "South" },
+  A("Grand Rapids", "Kent County", 42.9634, -85.6681, "Grand Rapids Metro", "West Michigan's largest city and the heart of our service area."),
+  A("Kentwood", "Kent County", 42.8695, -85.6447, "Grand Rapids Metro", "A city just south of Grand Rapids, right next to our 49512 service-area center."),
+  A("Wyoming", "Kent County", 42.9134, -85.7053, "Grand Rapids Metro", "A city just southwest of Grand Rapids."),
+  A("Grandville", "Kent County", 42.9097, -85.7631, "Grand Rapids Metro", "A city southwest of Grand Rapids along I-196."),
+  A("Walker", "Kent County", 42.9861, -85.7681, "Grand Rapids Metro", "A city on Grand Rapids' northwest side."),
+  A("Cascade", "Kent County", 42.9161, -85.4964, "Grand Rapids Metro", "A township east of Grand Rapids along the Thornapple River."),
+  A("East Grand Rapids", "Kent County", 42.9414, -85.6103, "Grand Rapids Metro", "A city on Grand Rapids' east side, around Reeds Lake."),
+  A("Byron Center", "Kent County", 42.8122, -85.7228, "Grand Rapids Metro", "A community south of Grand Rapids in Byron Township."),
+  A("Caledonia", "Kent County", 42.7892, -85.5164, "Grand Rapids Metro", "A village southeast of Grand Rapids."),
+  A("Ada", "Kent County", 42.9553, -85.495, "North & East", "A township east of Grand Rapids where the Thornapple meets the Grand River."),
+  A("Lowell", "Kent County", 42.9336, -85.3417, "North & East", "A city east of Grand Rapids on the Grand River."),
+  A("Rockford", "Kent County", 43.12, -85.5603, "North & East", "A city north of Grand Rapids on the Rogue River."),
+  A("Cedar Springs", "Kent County", 43.2234, -85.5514, "North & East", "A city in northern Kent County."),
+  A("Sparta", "Kent County", 43.1606, -85.71, "North & East", "A village northwest of Grand Rapids."),
+  A("Belding", "Ionia County", 43.0978, -85.2289, "North & East", "A city in Ionia County on the Flat River."),
+  A("Greenville", "Montcalm County", 43.1775, -85.2528, "North & East", "A city in Montcalm County on the Flat River."),
+  A("Ionia", "Ionia County", 42.9872, -85.0711, "North & East", "The Ionia County seat, east of Grand Rapids on the Grand River."),
+  A("Jenison", "Ottawa County", 42.9072, -85.792, "Lakeshore", "A community in Georgetown Township, just west of Grand Rapids."),
+  A("Hudsonville", "Ottawa County", 42.8708, -85.8653, "Lakeshore", "A city in Ottawa County west of Grand Rapids."),
+  A("Allendale", "Ottawa County", 42.9722, -85.9536, "Lakeshore", "A township in Ottawa County, home to Grand Valley State University."),
+  A("Zeeland", "Ottawa County", 42.8125, -86.0187, "Lakeshore", "A city in Ottawa County just east of Holland."),
+  A("Holland", "Ottawa County", 42.7875, -86.1089, "Lakeshore", "A Lakeshore city near Lake Michigan."),
+  A("Grand Haven", "Ottawa County", 43.0631, -86.2284, "Lakeshore", "The Ottawa County seat, on Lake Michigan at the mouth of the Grand River."),
+  A("Muskegon", "Muskegon County", 43.2342, -86.2484, "Lakeshore", "The Muskegon County seat on the Lake Michigan shoreline."),
+  A("Middleville", "Barry County", 42.7131, -85.4619, "South", "A village in Barry County on the Thornapple River."),
+  A("Wayland", "Allegan County", 42.6736, -85.6447, "South", "A city in northern Allegan County along US-131."),
+  A("Hastings", "Barry County", 42.6464, -85.2908, "South", "The Barry County seat, southeast of Grand Rapids."),
+  A("Allegan", "Allegan County", 42.5292, -85.8553, "South", "The Allegan County seat on the Kalamazoo River."),
+  A("Kalamazoo", "Kalamazoo County", 42.2917, -85.5872, "South", "The Kalamazoo County seat, south of Grand Rapids along US-131."),
+  A("Battle Creek", "Calhoun County", 42.3211, -85.1797, "South", "A city in Calhoun County, southeast of Grand Rapids."),
 ];
+
+export const getArea = (slug: string) => AREAS.find((a) => a.slug === slug);
+export const areaPath = (a: Pick<Area, "slug">) => `/service-area/${a.slug}`;
+
+const toRad = (d: number) => (d * Math.PI) / 180;
+/** Straight-line miles between two points. */
+export function milesBetween(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const R = 3958.8;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+/** Compass direction from a to b (e.g. "northwest"). */
+export function directionFrom(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const y = b.lat - a.lat;
+  const x = (b.lng - a.lng) * Math.cos(toRad(a.lat));
+  const deg = (Math.atan2(x, y) * 180) / Math.PI;
+  const dirs = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"];
+  return dirs[Math.round(((deg + 360) % 360) / 45) % 8];
+}
+export const nearestAreas = (a: Area, n = 4) =>
+  AREAS.filter((x) => x.slug !== a.slug)
+    .map((x) => ({ x, d: milesBetween(a, x) }))
+    .sort((p, q) => p.d - q.d)
+    .slice(0, n)
+    .map((p) => p.x);
 
 export const REGIONS = [
   { name: "Grand Rapids Metro", body: "Kentwood, Wyoming, Grandville, Walker, Cascade, East Grand Rapids, Byron Center and Caledonia — home base." },

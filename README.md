@@ -50,6 +50,7 @@ src/
 | `/michigan-roofs` | West Michigan guide: why shingles age, renew vs. replace, candidate check |
 | `/about` | About |
 | `/service-area` | 50-mile radius around Grand Rapids, radar map |
+| `/service-area/:slug` | 30 SEO town pages (one template, `AreaDetail.tsx`), linked from the hub, map, footer and marquee |
 | `/contact` | Contact & inspection form |
 
 ## Brand

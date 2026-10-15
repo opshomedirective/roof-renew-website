@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import AreaMap from "../components/AreaMap";
 import CTASection from "../components/CTASection";
-import { AREAS, REGIONS } from "../data/site";
+import { AREAS, REGIONS, areaPath } from "../data/site";
 import { IMG } from "../data/images";
 import { useSEO } from "../seo";
 
@@ -66,7 +66,7 @@ export default function ServiceArea() {
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {AREAS.filter((a) => a.region === r.name).map((a, i) => (
                   <Reveal key={a.name} delay={(i % 4) * 0.05}>
-                    <Link to="/contact" className="group flex items-center justify-between rounded-2xl border border-frost bg-ice/40 px-5 py-4 transition hover:border-blue hover:bg-white">
+                    <Link to={areaPath(a)} className="group flex items-center justify-between rounded-2xl border border-frost bg-ice/40 px-5 py-4 transition hover:border-blue hover:bg-white">
                       <span className="flex items-center gap-2.5 font-bold text-navy">
                         <MapPin className="h-4 w-4 text-blue" /> {a.name}, MI
                       </span>

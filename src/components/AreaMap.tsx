@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { AREAS, BUSINESS } from "../data/site";
+import { useNavigate } from "react-router-dom";
+import { AREAS, BUSINESS, areaPath } from "../data/site";
 
 /**
  * Radar-style service-area map. Cities are plotted from real lat/lng
  * inside the 50-mile radius centered on ZIP 49512 — no map API needed.
  * A soft band on the left hints at the Lake Michigan shoreline.
+ * Every dot links to that town's SEO page; `highlight` marks one town.
  */
 const SIZE = 600;
 const C = SIZE / 2;
@@ -41,8 +43,9 @@ const SHORE: [number, number][] = [
   [43.6, -86.45], [43.35, -86.38], [43.23, -86.33], [43.06, -86.25], [42.9, -86.22], [42.78, -86.21], [42.6, -86.24], [42.4, -86.28], [42.2, -86.36],
 ];
 
-export default function AreaMap() {
+export default function AreaMap({ highlight }: { highlight?: string }) {
   const [hover, setHover] = useState<string | null>(null);
+  const navigate = useNavigate();
   const shore = SHORE.map(([la, ln]) => project(la, ln));
   const lakePath = `M -40 -40 L ${shore.map((p) => `${p.x} ${p.y}`).join(" L ")} L -40 ${SIZE + 40} Z`;
 
@@ -86,11 +89,21 @@ export default function AreaMap() {
 
         {AREAS.map((a) => {
           const { x, y } = project(a.lat, a.lng);
-          const on = hover === a.name;
+          const on = hover === a.name || highlight === a.name;
           const lab = LABELS[a.name];
           const [dx, dy, anchor] = lab ?? [10, 4, "start"];
           return (
-            <g key={a.name} onMouseEnter={() => setHover(a.name)} onMouseLeave={() => setHover(null)} className="cursor-pointer">
+            <g
+              key={a.name}
+              role="link"
+              tabIndex={0}
+              aria-label={`Roof rejuvenation in ${a.name}, MI`}
+              onClick={() => navigate(areaPath(a))}
+              onKeyDown={(e) => e.key === "Enter" && navigate(areaPath(a))}
+              onMouseEnter={() => setHover(a.name)}
+              onMouseLeave={() => setHover(null)}
+              className="cursor-pointer outline-none"
+            >
               <circle cx={x} cy={y} r={12} fill="transparent" />
               <circle cx={x} cy={y} r={on ? 6.5 : 3.5} fill={on ? CYAN : "#ffffff"} />
               {(lab || on) && (
@@ -111,7 +124,7 @@ export default function AreaMap() {
       <div className="glass absolute bottom-2 left-2 rounded-2xl px-4 py-3 text-xs text-white">
         <p className="font-bold tracking-widest text-cyan uppercase">Coverage</p>
         <p className="font-display text-lg font-extrabold">{radiusMiles}-mile radius</p>
-        <p className="text-mist">around ZIP {BUSINESS.serviceCenter.zip} · hover a dot</p>
+        <p className="text-mist">around ZIP {BUSINESS.serviceCenter.zip} · click a town</p>
       </div>
     </div>
   );

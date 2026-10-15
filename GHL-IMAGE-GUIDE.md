@@ -2,6 +2,8 @@
 
 Every image on the site, its filename, and exactly where it goes.
 
+> ⚠️ **The public GitHub repo will be deleted.** Every image must be downloaded and hosted in the GHL Media Library. Never hotlink `github.com`, `raw.githubusercontent.com` or `unsplash.com`.
+
 **How to use this guide in GoHighLevel**
 
 1. Upload every file in `/public/images` (also delivered in the `imagenes-para-ghl` folder) to the GHL Media Library **without renaming them**.
@@ -93,6 +95,19 @@ Each service page uses three images:
 |---|---|
 | Hero | `grand-rapids-sunset.jpg` |
 | Bottom CTA card | `lake-michigan-dune-path.jpg` |
+
+### Town pages `/service-area/{town}` (30 pages, one template)
+
+The hero and the bottom CTA card use the image for the town's region:
+
+| Region | Towns | File |
+|---|---|---|
+| Grand Rapids Metro | Grand Rapids, Kentwood, Wyoming, Grandville, Walker, Cascade, East Grand Rapids, Byron Center, Caledonia | `home-dusk-porch-lights.jpg` |
+| North & East | Ada, Lowell, Rockford, Cedar Springs, Sparta, Belding, Greenville, Ionia | `michigan-fall-home-golden-trees.jpg` |
+| Lakeshore | Jenison, Hudsonville, Allendale, Zeeland, Holland, Grand Haven, Muskegon | `lake-michigan-dune-path.jpg` |
+| South | Middleville, Wayland, Hastings, Allegan, Kalamazoo, Battle Creek | `brick-home-autumn-path.jpg` |
+
+Service cards, Renew vs. Replace and Season tabs reuse the same images as on Home.
 
 ### Contact `/contact`
 

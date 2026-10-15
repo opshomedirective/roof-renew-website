@@ -11,6 +11,22 @@ Do NOT redesign it. CLONE it, page by page and section by section.
 SOURCE REPOSITORY (public):
 https://github.com/opshomedirective/roof-renew-website
 
+⚠️ CRITICAL — EVERYTHING MUST BE HOSTED IN GHL
+The public GitHub repository is TEMPORARY and WILL BE DELETED soon after
+the build. Anything that still points to it will break.
+  • Download EVERY image, logo and favicon used on the site and upload it to
+    the GHL Media Library with the EXACT same filename as /public/images.
+    Use ONLY the GHL Media Library URLs on the site.
+  • NEVER hotlink: no URL on the site may contain "github.com",
+    "raw.githubusercontent.com", "githubusercontent", "unsplash.com" or
+    "vercel.app". Not in <img>, not in CSS backgrounds, not in the favicon.
+  • Icons, the swoosh, the radar map and every other SVG: rebuild them as
+    inline code inside GHL (copy the SVG markup from the components), not as
+    links to repo files.
+  • Google Fonts (Manrope) is the only allowed external resource.
+  • Before you finish, search every page for "github", "githubusercontent",
+    "unsplash" and "vercel". The result must be ZERO.
+
 ══════════════════════════════════════════════════════════════════
 1. STUDY THE PROJECT FIRST
 ══════════════════════════════════════════════════════════════════
@@ -44,6 +60,7 @@ repairs, storm damage, ventilation or any other service.
 /michigan-roofs                     West Michigan guide: why shingles age, renew vs. replace
 /about
 /service-area
+/service-area/{slug}                30 town pages (one template, see below)
 /contact
 404 page
 
@@ -52,6 +69,54 @@ Hero (photo + title + tagline + 2 buttons + 3 badges + curved swoosh at the
 bottom) → Intro (headline, 2 paragraphs, 2 overlapping photos) → "Know the
 signs" grid of 6 cards → "What's included" checklist + 4-step timeline +
 sticky multi-step form → city marquee → FAQ → 3 related services → CTA card.
+
+ONE TEMPLATE FOR ALL 30 TOWN PAGES (src/pages/AreaDetail.tsx). Same
+sections, same order, same design on every page; only the town data changes.
+  SEO   Title: "Roof Rejuvenation in {Town}, MI | Roof-Renew"
+        Meta:  "Roof rejuvenation for aging shingles in {Town}, MI. Renew your
+               roof before you replace it — free owner-led inspection:
+               (616) 265-9270."
+        URL:   /service-area/{slug}   (exact slugs in the table)
+  1) PageHero: photo = the region's hero image (table). Breadcrumb
+     Home › Service Area › {Town}. Eyebrow "SERVICE AREA · {County}".
+     H1 "Roof rejuvenation in {Town}, MI." ("{Town}, MI." in the blue
+     highlight). Sub-line = the town's unique note + "Before you replace
+     your roof, see if you can renew it first — free, owner-led inspections
+     for {Town} homeowners." Buttons: "Free inspection in {Town}" (form) and
+     the phone (tel:+16162659270). Curved swoosh at the bottom.
+  2) White section, 2 columns. Left: eyebrow "{Town}, Michigan", H2 "Renew
+     your {Town} roof before you replace it.", 3 local paragraphs (word for
+     word from AreaDetail.tsx; Lakeshore towns also mention lake-effect
+     snow). Right: "Quick facts" card (navy header "{Town}, MI") with
+     County · From Grand Rapids (table) · Hours · Inspection "Free ·
+     owner-led · no obligation", then "NEARBY TOWNS WE SERVE": 4 pill links
+     to the nearby towns' pages (table).
+  3) "Our services in {Town}" — the 2 service cards (same as the Services hub).
+  4) "Renew vs. replace" — "Is your {Town} roof a candidate?" + the same
+     Renew vs. Replace block as Home.
+  5) "Four seasons of wear" — "What a Michigan year does to {Town} roofs." +
+     the same Season tabs as Home.
+  6) Navy section: "Where {Town} fits" / "Serving {Town} and all of West
+     Michigan." + distance sentence + "All service areas" button, and the
+     radar map with THIS town's dot highlighted (bigger cyan dot + label).
+  7) FAQ (4 questions with the town name, word for word from AreaDetail.tsx).
+  8) "Book in {Town}" — the multi-step lead form.
+  9) CTA card "Before you replace your {Town} roof, see if you can renew
+     it." with the region's hero image.
+
+Per-town data (county, distance, 4 nearby towns, note, hero image): see
+the table in GHL-UPDATE-PROMPT-SERVICE-AREAS.md, or compute it from
+src/data/site.ts (AREAS, milesBetween, directionFrom, nearestAreas).
+
+INTERNAL LINKS (this is what makes the pages work for SEO):
+  • /service-area: every town card links to its town page (not /contact).
+  • Radar map (everywhere it appears): every town dot is clickable and
+    opens that town's page; the bottom label says "click a town".
+  • Footer "Serving" column: ALL 30 towns, each one a link.
+  • City marquee (Home, service pages, etc.): every town name is a link.
+  • Each town page links to its 4 nearby towns (table) and back to
+    /service-area.
+  • Add all 30 URLs to the sitemap.
 
 Home sections in order: Hero slideshow ("Before you replace your roof…
 see if you can renew it first.") → 4 trust cards → Services (2 cards + blue
@@ -150,8 +215,9 @@ hours, service area) and a giant faint "ROOF-RENEW" wordmark.
 ══════════════════════════════════════════════════════════════════
 5. IMAGES
 ══════════════════════════════════════════════════════════════════
-I've uploaded every image to the GHL Media Library with the EXACT same
-filenames as /public/images in the repo. Follow GHL-IMAGE-GUIDE.md: it lists
+Every image must be downloaded and uploaded to the GHL Media Library with
+the EXACT same filenames as /public/images in the repo (the repo will be
+deleted; see the CRITICAL block at the top). Follow GHL-IMAGE-GUIDE.md: it lists
 the file for every page and section. Find each file by name in the Media
 Library and use its GHL URL. No GHL stock, AI images or placeholders.
 
@@ -223,6 +289,10 @@ code), favicon = roof-renew-favicon.png.
 □ No replacement, repair, storm or ventilation services anywhere.
 □ No street address, legal name, EIN or email address appears anywhere.
 □ No invented offers, reviews, warranties or financing.
+□ All 30 town pages exist with their own title, meta and H1, and every
+  town on /service-area, the map, the footer and the marquee links to its page.
+□ Searching the site for "github", "githubusercontent", "unsplash" and
+  "vercel" returns ZERO results.
 □ No placeholder text, no broken links, no missing images.
 □ All CTAs open the GHL form/calendar; all phone links work on mobile.
 □ At 375px wide: no horizontal scroll, the sticky bottom bar shows, and the

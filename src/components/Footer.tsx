@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Clock, MapPin, Phone, ScanSearch } from "lucide-react";
 import Logo from "./Logo";
-import { AREAS, BUSINESS, NAV } from "../data/site";
+import { AREAS, BUSINESS, NAV, areaPath } from "../data/site";
 import { SERVICES } from "../data/services";
 
 export default function Footer() {
@@ -50,7 +50,13 @@ export default function Footer() {
             ))}
           </ul>
           <p className="eyebrow on-dark mt-8 mb-3">Serving</p>
-          <p className="text-sm leading-relaxed text-white/60">{AREAS.slice(0, 10).map((x) => x.name).join(" · ")}</p>
+          <p className="flex flex-wrap gap-x-2 gap-y-1 text-sm leading-relaxed text-white/60">
+            {AREAS.map((x) => (
+              <Link key={x.slug} to={areaPath(x)} className="transition hover:text-cyan">
+                {x.name}
+              </Link>
+            ))}
+          </p>
         </div>
 
         <div>
